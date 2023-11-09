@@ -13,9 +13,5 @@ export default function Main(){
             <div className="movie" src="aimagemficaráaqui"></div>
         </div>
     </div>
-<<<<<<< HEAD
-}
-=======
     )
 }
->>>>>>> c88830c7bf1eb30f4d8db5f7d7f5f9fc776e4c5d
