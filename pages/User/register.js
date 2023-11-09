@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import styles from '../styles/Register.module.css'
+import LoginCard from '../../src/components/loginCard/loginCard'
 
 export default function Register() {
     return(
-        <div>
+        <div className={styles.background}>
             <Link href="User/login"></Link>
-            <p>Página de cadastro!</p>
+            <LoginCard/>
         </div>
     )
 } 
