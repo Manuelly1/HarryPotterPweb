@@ -6,7 +6,8 @@ export default function Login() {
     return(
         <div className={styles.background}>
             <Link href="/">Home</Link>
-            <LoginCard/>
+            <LoginCard title="Entre em sua conta">
+                </LoginCard>/
         </div>
     )
 } 

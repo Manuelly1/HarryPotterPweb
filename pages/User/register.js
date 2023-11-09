@@ -6,7 +6,8 @@ export default function Register() {
     return(
         <div className={styles.background}>
             <Link href="User/login"></Link>
-            <LoginCard/>
+            <LoginCard title="Crie sua conta">
+                </LoginCard>/
         </div>
     )
 } 
