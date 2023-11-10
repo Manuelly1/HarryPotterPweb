@@ -1,0 +1,53 @@
+
+.bodyWrapper {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative; 
+  }
+  
+  .imagempaginaprincipal {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+  }
+  
+  .linkWrapper {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+  }
+  
+  .all-movies {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-direction: row;
+  }
+  
+  .movies {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  
+  .movies img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid black;
+  }
+  
+  .movies:hover {
+    transform: scale(1.1);
+  }
+  
+  .bodyWrapper {
+    background: url('https://usagif.com/wp-content/uploads/gif/outerspace-6.gif') center/cover fixed no-repeat;
+  }
+  
