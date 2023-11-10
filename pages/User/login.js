@@ -12,9 +12,9 @@ export default function Login() {
                     <Input type="login" placeholder="Seu login:"/> 
                     <Input type="password" placeholder="Sua senha:"/>
                     <Button>Entrar na conta</Button>
-                    <Link href="/User/register">Ainda não possui conta?</Link>
+                    <Link className={styles.linkReg} href="/User/register">Ainda não possui conta?</Link>
                 </form>
-                <Link href="/">Home</Link>
+                <Link className={styles.linkHome} href="/">Home</Link>
             </LoginCard>/
         </div>
     )

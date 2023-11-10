@@ -11,3 +11,30 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.linkLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.customSelect {
+    position: relative;
+    display: inline-block;
+}
+
+.label {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.option {
+    
+}
