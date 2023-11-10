@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../styles/index.module.css';
+import styles from './styles/index.module.css';
 
 const testedeurls = [
   'https://cdn.hmv.com/r/w-640/hmv/files/b4/b457a57a-811f-42c7-8f6a-7d77fa28457d.jpg',

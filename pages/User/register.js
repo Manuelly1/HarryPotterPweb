@@ -1,20 +1,22 @@
 import Link from 'next/link'
 import styles from '../styles/Register.module.css'
-import LoginCard from '../../src/components/loginCard/loginCard'
-import Input from '../src/components/input/input'
-import Button from '../src/components/button/button'
+import LoginCard from '../components/loginCard/loginCard'
+import Input from '../components/input/input'
+import Button from '../components/button/button'
+import Login from './login'
 
 export default function Register() {
     return(
         <div className={styles.background}>
-            <Link href="User/login"></Link>
             <LoginCard title="Crie sua conta">
                 <form className={styles.form}>
                     <Input type="email" placeholder="Informe seu e-mail:"/> 
+                    <Input type="login" placeholder="Informe um login:"/> 
                     <Input type="password" placeholder="Informe uma senha:"/>
                     <Button>Criar conta</Button>
                     <Link href="/login">Já possui uma conta?</Link>
                 </form>
+                <Link href="/">Home</Link>
             </LoginCard>/
         </div>
     )
