@@ -15,6 +15,7 @@ export default function Main() {
           <Link href="User/login">
             <img className={styles.imagempaginaprincipal} src="HarryPotterPweb\images\kisspng-computer-icons-user-profile-encapsulated-postscrip-icon-black-5b45d010037271.6274823915313019040141.jpg" />
           </Link>
+          <Link href="User/register"></Link>
         </div>
         <img src="https://img.elo7.com.br/product/original/1C6878E/painel-2x1-harry-potter-magicos.jpg" />
       </div>

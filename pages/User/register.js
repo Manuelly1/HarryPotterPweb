@@ -3,7 +3,6 @@ import styles from '../styles/Register.module.css'
 import LoginCard from '../components/loginCard/loginCard'
 import Input from '../components/input/input'
 import Button from '../components/button/button'
-import Login from './login'
 
 export default function Register() {
     return(
@@ -14,7 +13,7 @@ export default function Register() {
                     <Input type="login" placeholder="Informe um login:"/> 
                     <Input type="password" placeholder="Informe uma senha:"/>
                     <Button>Criar conta</Button>
-                    <Link href="/login">Já possui uma conta?</Link>
+                    <Link href="/User/login">Já possui uma conta?</Link>
                 </form>
                 <Link href="/">Home</Link>
             </LoginCard>/

@@ -3,7 +3,6 @@ import styles from '../styles/Login.module.css'
 import LoginCard from '../components/loginCard/loginCard'
 import Input from '../components/input/input'
 import Button from '../components/button/button'
-import Register from "./register"
 
 export default function Login() {
     return(
@@ -13,7 +12,7 @@ export default function Login() {
                     <Input type="login" placeholder="Seu login:"/> 
                     <Input type="password" placeholder="Sua senha:"/>
                     <Button>Entrar na conta</Button>
-                    <Link href="/register">Ainda não possui conta?</Link>
+                    <Link href="/User/register">Ainda não possui conta?</Link>
                 </form>
                 <Link href="/">Home</Link>
             </LoginCard>/
