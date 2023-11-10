@@ -1,17 +1,37 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import styles from '../styles/index.module.css';
 
-export default function Main(){
-    return(
-    <div>
-        <div>
-            <Link href="User/login">
-                <img src="HarryPotterPweb\images\kisspng-computer-icons-user-profile-encapsulated-postscrip-icon-black-5b45d010037271.6274823915313019040141.jpg"></img>
-            </Link>
-            <img src="https://img.elo7.com.br/product/original/1C6878E/painel-2x1-harry-potter-magicos.jpg"></img>
+const testedeurls = [
+  'https://cdn.hmv.com/r/w-640/hmv/files/b4/b457a57a-811f-42c7-8f6a-7d77fa28457d.jpg',
+  'https://images.booklooker.de/s/00CsMo/Harry-Potter-und-die-Kammer-des-Schreckens.jpg',
+  'https://br.web.img2.acsta.net/medias/nmedia/18/93/88/04/20282944.jpg',
+];
+
+export default function Main() {
+  return (
+    <div className={styles.bodyWrapper}>
+      <div>
+        <div className={styles.linkWrapper}>
+          <Link href="User/login">
+            <img className={styles.imagempaginaprincipal} src="HarryPotterPweb\images\kisspng-computer-icons-user-profile-encapsulated-postscrip-icon-black-5b45d010037271.6274823915313019040141.jpg" />
+          </Link>
         </div>
-        <div className="all-movies">
-            <div className="movie" src="aimagemficaráaqui"></div>
-        </div>
+        <img src="https://img.elo7.com.br/product/original/1C6878E/painel-2x1-harry-potter-magicos.jpg" />
+      </div>
+      <div className={styles['all-movies']}>
+
+        {testedeurls.map((testedeurl, index) => (
+
+          <div key={index} className={styles.movies}>
+
+            <img src={testedeurl} alt={`Imagem ${index + 1}`} />
+
+          </div>
+
+        ))}
+        
+      </div>
+
     </div>
-    )
+  );
 }
