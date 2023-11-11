@@ -1,5 +1,5 @@
 .background {
-    background-color: #000;
+    background-color: #000610;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -9,17 +9,21 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .linkReg {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fffbfb;
+    margin-bottom: 10px;
 }
 
 .linkHome {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fbfbfb;
+    margin-top: 10px;
 }

@@ -1,10 +1,33 @@
 .button {
     padding: 15px 30px;
     border: 0;
-    background-color: blueviolet;
+    background-color: rgb(17, 4, 91);
     color: #FFF;
     font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: rgb(6, 36, 62);
+}
+
+.buttonLogin,
+.buttonHome {
+    padding: 15px 30px;
+    border: 0;
+    background-color: rgb(17, 4, 91);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttonLogin:hover,
+.buttonHome:hover {
+    background-color: rgb(6, 36, 62);
 }

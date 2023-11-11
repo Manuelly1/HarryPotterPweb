@@ -1,5 +1,5 @@
 .background {
-    background-color: #000;
+    background-color: #000610;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -9,19 +9,59 @@
 .form {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+.houseSelection {
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    justify-content: space-around;
+}
+
+.houseOption {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 10px);
+    margin-bottom: 10px;
+}
+
+.houseOption input {
+    display: none;
+}
+
+.houseOption label {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.houseOption img {
+    width: 100%; 
+    height: 100px; 
+    object-fit: cover; /* Mantém proporções e corta a imagem se necessário */
+}
+
+.houseOption input:checked + label {
+    border-color: #0070f3;
 }
 
 .linkLogin {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #fffbfb;
 }
 
 .linkHome {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fbfbfb;
+    margin-top: 10px;
 }
 
 .customSelect {
@@ -30,11 +70,12 @@
 }
 
 .label {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     display: block;
     margin-bottom: 10px;
 }
 
-.option {
-    
+.titleQuestion {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fbfbfb;
 }

@@ -1,41 +1,53 @@
-import Link from 'next/link'
-import styles from '../styles/Register.module.css'
-import LoginCard from '../components/loginCard/loginCard'
-import Input from '../components/input/input'
-import Button from '../components/button/button'
+import { useState } from 'react';
+import Link from 'next/link';
+import styles from '../styles/Register.module.css';
+import LoginCard from '../components/loginCard/loginCard';
+import Input from '../components/input/input';
+import Button from '../components/button/button';
+import IconHome from '../components/icons/iconHome';
 
 export default function Register() {
-    return(
+    const [selectedHouse, setSelectedHouse] = useState(null);
+
+    const houses = [
+        {name: 'Gryffindor', url: 'https://i.pinimg.com/564x/7e/8c/2e/7e8c2e995e1d8a41fa7d13034edb24ad.jpg'},
+        {name: 'Hufflepuff', url: 'https://i.pinimg.com/564x/76/45/b9/7645b9b88e14bc3d8c12954bb130fd76.jpg'},
+        {name: 'Ravenclaw', url: 'https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg'},
+        {name: 'Slytherin', url: 'https://i.pinimg.com/564x/e7/6c/57/e76c57c8c4352a05c3c573fe1fba08d8.jpg'},
+    ];
+
+    return (
         <div className={styles.background}>
             <LoginCard title="Crie sua conta">
                 <form className={styles.form}>
                     <Input type="email" placeholder="Informe um e-mail:"/> 
                     <Input type="login" placeholder="Informe um login:"/> 
                     <Input type="password" placeholder="Informe uma senha:"/>
-                    <label className={styles.label} for="hogwartsHouse">Selecione a casa de Hogwarts que você pertence:</label>
-                    <div className={styles.customSelect}>
-                        <select>
-                            <option className={styles.option}>
-                                <img src='https://cdn.ome.lt/EFCnnfUKzPbhTfocxkrOH7laQOM=/770x0/smart/uploads/conteudo/fotos/legiao_NkHcwaty4j17.jpg.jpeg' alt='Griffindor'/>
-                            </option>
-                            <option>
-                                <img src='https://www.braian.com.br/wp-content/uploads/2021/04/wallhaven-x18v2l.png' alt='Slytherin'/>
-                            </option>
-                            <option>
-                                <img src='https://i.pinimg.com/originals/d1/3b/95/d13b954a39da0640b83a8fc22ad2f7b3.jpg' alt='Ravenclaw'/>
-                            </option>
-                            <option>
-                                <img src='https://i.pinimg.com/474x/a2/29/30/a2293015da53b2a6d9c6d38ce449fc51.jpg' alt='Hufflepuff'/>
-                            </option>
-                        </select>
+                    <p className={styles.titleQuestion}>Selecione a sua casa em Hogwarts:</p>
+                    <div className={styles.houseSelection}>
+                        {houses.map((house, index) => (
+                            <div key={index} className={styles.houseOption}>
+                                <input
+                                    type="radio"
+                                    id={`house-${index}`}
+                                    name="house"
+                                    value={house.name}
+                                    checked={selectedHouse === house.name}
+                                    onChange={() => setSelectedHouse(house.name)}
+                                />
+                                <label htmlFor={`house-${index}`}>
+                                    <img src={house.url} alt={house.name} />
+                                </label>
+                            </div>
+                        ))}
                     </div>
                     <Button>Criar conta</Button>
                     <Link className={styles.linkLogin} href="/User/login">Já possui uma conta?</Link>
                 </form>
-                <Link className={styles.linkHome} href="/">Home</Link>
-            </LoginCard>/
+                <Link className={styles.linkHome} href="/">
+                    <IconHome />
+                </Link>
+            </LoginCard>
         </div>
-    )
-} 
-
-// aqui terá a seleção das casas 
+    );
+}

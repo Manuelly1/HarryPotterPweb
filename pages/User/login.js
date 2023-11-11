@@ -1,8 +1,9 @@
-import Link from 'next/link'
-import styles from '../styles/Login.module.css'
-import LoginCard from '../components/loginCard/loginCard'
-import Input from '../components/input/input'
-import Button from '../components/button/button'
+import Link from 'next/link';
+import styles from '../styles/Login.module.css';
+import LoginCard from '../components/loginCard/loginCard';
+import Input from '../components/input/input';
+import Button from '../components/button/button';
+import IconHome from '../components/icons/iconHome';
 
 export default function Login() {
     return(
@@ -14,9 +15,12 @@ export default function Login() {
                     <Button>Entrar na conta</Button>
                     <Link className={styles.linkReg} href="/User/register">Ainda não possui conta?</Link>
                 </form>
-                <Link className={styles.linkHome} href="/">Home</Link>
+                <Link className={styles.linkHome} href="/">
+                    <IconHome />
+                </Link>
             </LoginCard>/
         </div>
     )
 } 
 
+// só falta gerar um link para "recuperar senha" e enviar uma notificação no email registrado
