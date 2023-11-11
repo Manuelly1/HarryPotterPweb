@@ -9,7 +9,41 @@
 .form {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+.houseSelection {
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    justify-content: space-around;
+}
+
+.houseOption {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 10px);
+    margin-bottom: 10px;
+}
+
+.houseOption input {
+    display: none;
+}
+
+.houseOption label {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.houseOption img {
+    width: 100%; /* Ocupa 100% da largura da opção de casa */
+    height: 100px; /* Altura fixa, ajuste conforme necessário */
+    object-fit: cover; /* Mantém proporções e corta a imagem se necessário */
+}
+
+.houseOption input:checked + label {
+    border-color: #0070f3;
 }
 
 .linkLogin {
@@ -30,11 +64,7 @@
 }
 
 .label {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: block;
     margin-bottom: 10px;
-}
-
-.option {
-    
 }
