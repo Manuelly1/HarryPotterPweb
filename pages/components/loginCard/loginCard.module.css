@@ -1,5 +1,5 @@
 .card {
-    background-color: #fff;
+    background-color: rgb(75, 75, 77);
     width: 450px;
     padding: 30px;
     border-radius: 10px;
@@ -7,4 +7,5 @@
 
 .title {
     text-align: center;
+    color: #fff;
 }
