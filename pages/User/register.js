@@ -4,6 +4,7 @@ import styles from '../styles/Register.module.css';
 import LoginCard from '../components/loginCard/loginCard';
 import Input from '../components/input/input';
 import Button from '../components/button/button';
+import IconHome from '../components/icons/iconHome';
 
 export default function Register() {
     const [selectedHouse, setSelectedHouse] = useState(null);
@@ -43,7 +44,9 @@ export default function Register() {
                     <Button>Criar conta</Button>
                     <Link className={styles.linkLogin} href="/User/login">Já possui uma conta?</Link>
                 </form>
-                <Link className={styles.linkHome} href="/">Home</Link>
+                <Link className={styles.linkHome} href="/">
+                    <IconHome />
+                </Link>
             </LoginCard>
         </div>
     );
