@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './styles/index.module.css';
+import IconUser from './components/icons/iconUser';
 
 const testedeurls = [
   'https://cdn.hmv.com/r/w-640/hmv/files/b4/b457a57a-811f-42c7-8f6a-7d77fa28457d.jpg',
@@ -13,7 +14,7 @@ export default function Main() {
       <div>
         <div className={styles.linkWrapper}>
           <Link href="User/login">
-            <img className={styles.imagempaginaprincipal} src="HarryPotterPweb\images\kisspng-computer-icons-user-profile-encapsulated-postscrip-icon-black-5b45d010037271.6274823915313019040141.jpg" />
+            <IconUser />
           </Link>
           <Link href="User/register"></Link>
         </div>
