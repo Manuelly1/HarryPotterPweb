@@ -1,0 +1,31 @@
+.divPersonagens {
+/* Adicione seus estilos para divPersonagens aqui */
+}
+
+.titlePersonagens {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 55px;
+}
+  
+.charactersGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+  
+.characterCard {
+    /* Estilos para o cartão do personagem */
+    text-align: center;
+}
+  
+.characterImage {
+    width: 280px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+  
