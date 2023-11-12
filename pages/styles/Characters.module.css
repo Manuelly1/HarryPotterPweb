@@ -1,0 +1,58 @@
+.divPersonagens {
+    background-color: #00060D;
+    
+}
+
+.titlePersonagens {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-size: 50px;
+    color: #fffbfb;
+}
+  
+.charactersGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+  
+.characterCard {
+    text-align: center;
+    color: #fff;
+    cursor: pointer; 
+    font-size: 14px;
+}
+
+.characterImageName {
+    width: 280px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+  
+.searchIcon {
+    position: absolute;
+    top: 50px; 
+    right: 50px; 
+    cursor: pointer; 
+    color: #fff;
+}
+
+.linkHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fbfbfb;
+    margin-top: 30px;
+}
+
+.linkMovieDetails {
+    position: absolute;
+    top: 50px; 
+    left: 50px; 
+    cursor: pointer; 
+    color: #fff;
+}
