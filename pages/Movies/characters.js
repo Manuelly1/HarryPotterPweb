@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Characters.module.css';
 import IconHome from '../components/icons/iconHome';
@@ -53,26 +54,25 @@ export default function Characters() {
         <div className={styles.divPersonagens}>
             <h1 className={styles.titlePersonagens}>Personagens</h1>
             <div className={styles.charactersGrid}>
-            {charactersData.map((character) => (
-                <div key={character.id} className={styles.characterCard}>
-                <img
-                    src={character.image}
-                    alt={character.name}
-                    className={styles.characterImageName}
-                />
-                <h2>{character.name}</h2>
-                </div>
-            ))}
+            {
+                charactersData.map((character) => (
+                    <div key={character.id} className={styles.characterCard}>
+                    <img src={character.image} alt={character.name} className={styles.characterImageName}/>
+                    <h2>{character.name}</h2>
+                    </div>
+                    )
+                )
+            }
             </div>
             <div className={styles.searchIcon}>
-            <IconSearch />
-        </div>
-        <Link className={styles.linkHome} href="/">
-            <IconHome />
-        </Link>
-        <Link className={styles.linkMovieDetails} href="/Movies/movieDetails">
-            <IconBack />
-        </Link>
+                <IconSearch />
+            </div>
+            <Link className={styles.linkHome} href="/">
+                <IconHome />
+            </Link>
+            <Link className={styles.linkMovieDetails} href="/Movies/movieDetails">
+                <IconBack />
+            </Link>
         </div>
         </body>
     );
