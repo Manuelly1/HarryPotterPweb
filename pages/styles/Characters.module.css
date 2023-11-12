@@ -1,5 +1,6 @@
 .divPersonagens {
-/* Adicione seus estilos para divPersonagens aqui */
+    background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
+    
 }
 
 .titlePersonagens {
@@ -9,6 +10,7 @@
     justify-content: center;
     margin-bottom: 50px;
     font-size: 55px;
+    color: #fff;
 }
   
 .charactersGrid {
@@ -20,12 +22,41 @@
 .characterCard {
     /* Estilos para o cartão do personagem */
     text-align: center;
+    color: #fff;
+    cursor: pointer; 
 }
   
-.characterImage {
+.characterCard input:checked + label {
+    border-color: #0070f3;
+}
+
+.characterImageName {
     width: 280px;
     height: 320px;
     object-fit: cover;
     border-radius: 8px;
 }
   
+.searchIcon {
+    position: absolute;
+    top: 50px; 
+    right: 50px; 
+    cursor: pointer; 
+    color: #fff;
+}
+
+.linkHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fbfbfb;
+    margin-top: 30px;
+}
+
+.linkMovieDetails {
+    position: absolute;
+    top: 50px; 
+    left: 50px; 
+    cursor: pointer; 
+    color: #fff;
+}
