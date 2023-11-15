@@ -8,43 +8,44 @@ import Grifinoria from '../components/housesCard/grifinoria';
 import Sonserina from '../components/housesCard/sonserina';
 import Corvinal from '../components/housesCard/corvinal';
 import LufaLufa from '../components/housesCard/lufaLufa';
+import { getHousesData } from '../../api/houseApi';
 
-export default function Houses() {
+export default function Houses({ housesData }) {
   return (
     <div className={styles.background}>
       <HousesCardTitle title="Casas de Hogwarts" className={styles.specialCard}/>
       <div className={styles.cardsContainer}>
         <Grifinoria
           className={styles.houseCardGrifinoria}
-          title="Grifinória"
-          image="https://i.pinimg.com/564x/7e/8c/2e/7e8c2e995e1d8a41fa7d13034edb24ad.jpg"
-          colors="Cores: Vermelho e Dourado"
-          animal="Animal: Leão"
-          description="A casa é conhecida por valorizar a ação e a defesa dos fracos"
+          title= {housesData[0].nome}
+          image= {housesData[0].imagem}
+          colors= {housesData[0].cor}
+          animal= {housesData[0].animal}
+          description= {housesData[0].descricao}
         />
         <Corvinal
           className={styles.houseCardCorvinal}
-          title="Corvinal"
-          image="https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg"
-          colors="Cores: Azul e Prata/Bronze"
-          animal="Animal: Águia"
-          description="A casa valoriza a mente e a busca constante pelo aprendizado"
+          title= {housesData[1].nome}
+          image= {housesData[1].imagem}
+          colors= {housesData[1].cor}
+          animal= {housesData[1].animal}
+          description= {housesData[1].descricao}
         />
         <Sonserina
           className={styles.houseCardSonserina}
-          title="Sonserina"
-          image="https://i.pinimg.com/564x/e7/6c/57/e76c57c8c4352a05c3c573fe1fba08d8.jpg"
-          colors="Cores: Verde e Prata"
-          animal="Animal: Cobra"
-          description="A casa é conhecida por produzir bruxos astutos e estratégicos"
+          title= {housesData[2].nome}
+          image= {housesData[2].imagem}
+          colors= {housesData[2].cor}
+          animal= {housesData[2].animal}
+          description= {housesData[2].descricao}
         />
         <LufaLufa
           className={styles.houseCardLufaLufa}
-          title="Lufa-Lufa"
-          image="https://i.pinimg.com/564x/76/45/b9/7645b9b88e14bc3d8c12954bb130fd76.jpg"
-          colors="Cores: Amarelo e Preto"
-          animal="Animal: Texugo"
-          description="A casa é conhecida por aceitar e valorizar todas as habilidades, sem favorecer nenhuma em particular"
+          title= {housesData[3].nome}
+          image= {housesData[3].imagem}
+          colors= {housesData[3].cor}
+          animal= {housesData[3].animal}
+          description= {housesData[3].descricao}
         />
       </div>
       <Link className={styles.linkHome} href="/">
@@ -52,4 +53,13 @@ export default function Houses() {
       </Link>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const housesData = await getHousesData();
+  return {
+    props: {
+      housesData,
+    },
+  };
 }
