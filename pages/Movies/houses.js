@@ -43,7 +43,7 @@ export default function Houses() {
           title="Lufa-Lufa"
           image="https://i.pinimg.com/564x/76/45/b9/7645b9b88e14bc3d8c12954bb130fd76.jpg"
           colors="Cores: Amarelo e Preto"
-          animal="Texugo"
+          animal="Animal: Texugo"
           description="A casa é conhecida por aceitar e valorizar todas as habilidades, sem favorecer nenhuma em particular"
         />
       </div>
