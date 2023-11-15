@@ -2,8 +2,10 @@
     background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
     min-height: 100vh;
     display: flex;
+    flex-direction: column; /* Adiciona uma coluna para os elementos ficarem empilhados verticalmente */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap; 
 }
 
 .linkHome {
@@ -11,5 +13,10 @@
     align-items: center;
     justify-content: center;
     color: #fbfbfb;
-    margin-top: 10px;
+    margin-top: auto; /* Adiciona uma margem superior automática para empurrar o ícone para a parte inferior */
+    margin-bottom: 30px;
+}
+
+.grifinoria {
+    display: flex;
 }
