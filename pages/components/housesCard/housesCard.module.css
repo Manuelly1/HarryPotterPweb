@@ -1,0 +1,57 @@
+.card {
+    background-color: #010101;
+    width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.title {
+    text-align: center;
+    color: #fffbfb;
+}
+
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px; 
+}
+
+.image {
+    max-width: 30%;
+    height: auto;
+}
+
+.description {
+    margin-top: 10px;
+    color: #fff; 
+}
+
+.description p {
+    margin: 5px 0; 
+}
+
+.animal {
+    margin-top: 10px;
+    color: #fff; 
+}
+
+.animal p {
+    margin: 5px 0; 
+}
+
+.colors {
+    margin-top: 10px;
+    color: #fff; 
+}
+
+.colors p {
+    margin: 10px 0; 
+}
+
+.houseInfo {
+    text-align: center; 
+    margin-top: 10px; 
+}
+  

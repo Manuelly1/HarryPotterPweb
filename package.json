@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^14.0.1"
+    "next": "^14.0.2"
   }
 }

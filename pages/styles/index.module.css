@@ -1,95 +1,109 @@
-.bodyWrapper {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: relative; 
-  }
-  
-  .linkWrapper {
-    position: absolute; 
-    top: 10px; 
-    left: 10px; 
-    display: flex;
-    align-items: center;
-    z-index: 5;
-  }
-  
-  .linkWrapper a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
-  }
-  
-  .linkWrapper a:hover {
-    text-decoration: underline;
-  }
-  
-  .iconUser {
-    margin-right: 5px; 
-  }
-  
-  .all-movies {
-    display: flex;
-    justify-content: center;
-    gap: 200px; 
-    flex-wrap: wrap;
-    margin-top: 20px; 
-  }
-  
-  .movies {
-    width: 200px;
-    height: 300px;
-    margin: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s;
-    text-align: center;
-    background-color: #222; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .movies img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 2px solid #444; 
-    transition: transform 0.5s;
-  }
-  
-  .movies:hover {
-    transform: scale(1.05);
-  }
-  
-  .mainImageWrapper {
-    width: 100%;
-    max-width: 1920px;
-    height: 600px;
-    overflow: hidden;
-    border: 2px solid #444;
-    margin: 20px auto;
-    background: #111;
-    position: relative;
-    opacity: 0.4; 
-    transition: opacity 0.5s; 
+.all-movies {
+  display: flex;
+  justify-content: center;
+  gap: 200px; 
+  flex-wrap: wrap;
+  margin-top: 20px; 
+}
+
+.movies {
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s;
+  text-align: center;
+  background-color: #222; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.movies img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #444; 
+  transition: transform 0.5s;
+}
+
+.movies:hover {
+  transform: scale(1.05);
+}
+
+.mainImageWrapper {
+  width: 100%;
+  max-width: 1920px;
+  height: 600px;
+  overflow: hidden;
+  border: 2px solid #444;
+  margin: 20px auto;
+  background: #111;
+  position: relative;
+  opacity: 0.4; 
+  transition: opacity 0.5s; 
 }
 
 .mainImageWrapper:hover {
     opacity: 1;
 }
   
-  .mainImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s; 
-  }
-  
-  .mainImage:hover {
-    transform: scale(1.1);
-  }
-  
-  .bodyWrapper {
-    background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif') center/cover fixed no-repeat;
-    background-size: cover;
-  }
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s; 
+}
+
+.mainImage:hover {
+  transform: scale(1.1);
+}
+
+.bodyWrapper {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
+  background-size: 100% auto;
+  min-height: 100vh;
+}
+
+.linkWrapperUser {
+  position: absolute;
+  top: 5px;
+  right: 15px; 
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.linkWrapperUser a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.linkWrapperUser a:hover {
+  text-decoration: underline;
+}
+
+.linkWrapperHouses {
+  position: absolute;
+  top: 5px;
+  right: 30px; 
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.linkWrapperHouses a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.linkWrapperHouses a:hover {
+  text-decoration: underline;
+}
+

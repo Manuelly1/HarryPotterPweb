@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './styles/index.module.css';
 import IconUser from './components/icons/iconUser';
+import IconHouses from './components/icons/iconHouses';
 
 const testedeurls = [
   'https://cdn.hmv.com/r/w-640/hmv/files/b4/b457a57a-811f-42c7-8f6a-7d77fa28457d.jpg',
@@ -39,12 +40,18 @@ export default function Main() {
   return (
     <div className={styles.bodyWrapper}>
       <div>
-        <div className={styles.linkWrapper}>
+        <div className={styles.linkWrapperUser}>
           <Link href="User/login">
             <IconUser />
           </Link>
-          <Link href="User/register"></Link>
         </div>
+        <div className={styles.linkWrapperHouses}>
+          <Link href="Movies/houses">
+            <IconHouses />
+          </Link>
+        </div>
+          <Link href="User/register"></Link>
+        
         <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
       </div>
       <div className={styles['all-movies']}>
