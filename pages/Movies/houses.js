@@ -19,6 +19,30 @@ export default function Houses() {
                 animal="Animal: Leão."
                 description="A casa é conhecida por valorizar a ação e a defesa dos fracos."
             />
+            <Corvinal 
+                className={styles.corvinal}
+                title="Corvinal"
+                image="https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg"
+                colors="Cores: Azul e Prata/Bronze."
+                animal="Animal: Águia"
+                description="A casa valoriza a mente e a busca constante pelo aprendizado."
+            />
+            <Sonserina 
+                className={styles.sonserina}
+                title="Sonserina"
+                image="https://i.pinimg.com/564x/e7/6c/57/e76c57c8c4352a05c3c573fe1fba08d8.jpg"
+                colors="Cores: Verde e Prata"
+                animal="Animal: Cobra."
+                description="A casa é conhecida por produzir bruxos astutos e estratégicos."
+            />
+            <LufaLufa 
+                className={styles.lufaLufa}
+                title="Lufa-Lufa"
+                image="https://i.pinimg.com/564x/76/45/b9/7645b9b88e14bc3d8c12954bb130fd76.jpg"
+                colors="Cores: Amarelo e Preto"
+                animal="Texugo"
+                description="A casa é conhecida por aceitar e valorizar todas as habilidades, sem favorecer nenhuma em particular."
+            />
             <Link className={styles.linkHome} href="/">
                 <IconHome />
             </Link>
