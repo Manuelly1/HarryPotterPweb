@@ -1,0 +1,24 @@
+.background {
+    background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    max-width: 1200px;
+    margin-top: 20px; 
+}
+
+.linkHome {
+    position: absolute;
+    top: 30px; 
+    left: 20px; 
+    cursor: pointer; 
+    color: #fff;
+}
