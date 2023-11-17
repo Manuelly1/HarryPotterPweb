@@ -6,6 +6,31 @@
   margin-top: 20px; 
 }
 
+.navigationButton {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 120px;
+    cursor: pointer;
+    z-index: 1;
+    color: #fff; 
+    transition: color 0.3s; 
+  }
+  
+  .prevButton {
+    left: 10px; 
+  }
+  
+  .nextButton {
+    right: 10px; 
+  }
+  
+  .navigationButton:hover {
+    color: #3e2929; 
+  }
+
 .movieNumber {
     position: absolute;
     bottom: 0;
@@ -14,10 +39,8 @@
     padding: 8px;
     border-radius: 4px;
     font-size: 150px;
-    color: #242a32;
+    color: #5d5f62;
 }
-  
-  
   
 .movies {
   width: 200px;
