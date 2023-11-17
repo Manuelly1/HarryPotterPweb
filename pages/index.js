@@ -48,7 +48,9 @@ export default function Main({ moviesData }) {
   
           <div className={styles.roundedImageWrapper}>
             <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
+            <p className={styles.imageText}>"EXPECTO PATRONUM!"</p>
           </div>
+          <br></br>
           <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
           <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
         </div>

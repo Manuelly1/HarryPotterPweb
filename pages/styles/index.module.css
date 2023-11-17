@@ -1,3 +1,30 @@
+.imageText {
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 90px; 
+    color: #8B4513; 
+    opacity: 0; 
+    margin-bottom: 1000px; 
+    font-weight: bold;
+    font-family: Andale Mono, monospace; 
+  
+
+    animation: fadeInUp 1s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      bottom: -40px;
+      opacity: 0;
+    }
+    to {
+      bottom: 20px; 
+      opacity: 1;
+    }
+  }
+
 .all-movies {
   display: flex;
   justify-content: center;
