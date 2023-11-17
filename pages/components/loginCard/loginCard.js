@@ -1,4 +1,4 @@
-import styles from './loginCard.module.css'
+import styles from './loginCard.module.css';
 
 export default function LoginCard({ title, children }) { //usando o children, pois o cadastro vai precisar de outras informações além das de login
     return (
