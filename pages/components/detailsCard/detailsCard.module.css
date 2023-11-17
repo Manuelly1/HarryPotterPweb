@@ -4,6 +4,8 @@
     padding: 40px;
     border-radius: 10px;
     font-size: 18px;
+    align-items: center;
+    
 }
 
 .title {
@@ -24,6 +26,14 @@
     margin-bottom: 18px; 
 }
 
+.movieInfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
 .icon {
     display: flex;
     align-items: center;
@@ -34,7 +44,7 @@
 .icon > div {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .icon svg {
@@ -84,6 +94,6 @@
 
 .movieInfo {
     text-align: center; 
-    margin-top: 10px; 
+    margin-top: 10px;
 }
   
