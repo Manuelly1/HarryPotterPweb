@@ -4,6 +4,8 @@
     padding: 40px;
     border-radius: 10px;
     font-size: 18px;
+    align-items: center;
+    
 }
 
 .title {
@@ -24,25 +26,37 @@
     margin-bottom: 18px; 
 }
 
-.iconTime {
+.movieInfo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+.icon {
     display: flex;
     align-items: center;
     margin-left: 10px;
     color: #ece5e5;
 }
 
-.iconCalendar {
+.icon > div {
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    color: #ece5e5;
+    margin-right: 10px;
 }
 
-.iconCategory {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    color: #ece5e5;
+.icon svg {
+    height: 24px; 
+    width: auto; 
+    margin-right: 8px; 
+}
+
+.icon p {
+    margin: 0; 
+    font-size: 16px; 
+    line-height: 24px; 
 }
 
 .image {
@@ -80,6 +94,6 @@
 
 .movieInfo {
     text-align: center; 
-    margin-top: 10px; 
+    margin-top: 10px;
 }
   

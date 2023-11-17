@@ -70,7 +70,7 @@ export default function Characters() {
             <Link className={styles.linkHome} href="/">
                 <IconHome />
             </Link>
-            <Link className={styles.linkMovieDetails} href="/Movies/movieDetails">
+            <Link className={styles.linkMovieDetails} href="/Movies/moviesDetails">
                 <IconBack />
             </Link>
         </div>
