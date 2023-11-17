@@ -5,20 +5,49 @@
     flex-direction: column;
     align-items: center;
     font-size: 18px;
+    position: relative; 
 }
-
+  
 .cardsContainer {
     display: flex;
-    justify-content: space-around; 
-    flex-wrap: wrap; 
+    justify-content: space-around;
+    flex-wrap: wrap;
     max-width: 1200px;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
-
+  
 .linkHome {
     position: absolute;
-    top: 30px; 
-    left: 20px; 
-    cursor: pointer; 
+    top: 30px;
+    left: 20px;
+    cursor: pointer;
     color: #fff;
+}
+
+.buttonPersonagens {
+    background-color: rgb(5, 2, 26);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    bottom: -3px; 
+    padding: 10px;
+    cursor: pointer;
+}
+
+.buttonCheck {
+    background-color: rgb(5, 2, 26);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 60%;
+    transform: translateX(-50%);
+    bottom: -3px; 
+    padding: 10px;
+    cursor: pointer;
 }

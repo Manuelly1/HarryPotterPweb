@@ -1,7 +1,7 @@
 .card {
     background-color: #010101;
     width: 450px;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     font-size: 18px;
 }
@@ -9,6 +9,7 @@
 .title {
     text-align: center;
     color: #fffbfb;
+    font-size: 24px;
 }
 
 .sinopse {
@@ -23,6 +24,27 @@
     margin-bottom: 18px; 
 }
 
+.iconTime {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #ece5e5;
+}
+
+.iconCalendar {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #ece5e5;
+}
+
+.iconCategory {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #ece5e5;
+}
+
 .image {
     max-width: 80%;
     height: auto;
@@ -31,6 +53,7 @@
 .description {
     margin-top: 10px;
     color: #fff; 
+    text-align: justify;
 }
 
 .description p {
