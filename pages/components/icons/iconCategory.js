@@ -7,8 +7,8 @@ export default function IconCategory(props) {
           strokeLinejoin="round"
           strokeWidth={2}
           viewBox="0 0 24 24"
-          height="1em"
-          width="1em"
+          height="24"
+          width="24"
           {...props}
         >
           <path stroke="none" d="M0 0h24v24H0z" />
