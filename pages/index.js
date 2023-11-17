@@ -15,52 +15,54 @@ const testeimagensmainpage = [
 ];
 
 export default function Main({ moviesData }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % testeimagensmainpage.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + testeimagensmainpage.length) % testeimagensmainpage.length);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextImage, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className={styles.bodyWrapper}>
-      <div className={styles.imageContainer}>
-        <div className={styles.linkWrapperUser}>
-          <Link href="User/login">
-            <IconUser />
-          </Link>
-        </div>
-        <div className={styles.linkWrapperHouses}>
-          <Link href="Movies/houses">
-            <IconHouses />
-          </Link>
-        </div>
-        <Link href="User/register"></Link>
-
-        <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
-        <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
-        <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
-      </div>
-      <div className={styles['all-movies']}>
-        {moviesData.map((movie, index) => (
-          <div key={movie.id} className={styles.movies}>
-            <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
-            <span className={styles.movieNumber}>{index + 1}</span>
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+    const nextImage = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % testeimagensmainpage.length);
+    };
+  
+    const prevImage = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex - 1 + testeimagensmainpage.length) % testeimagensmainpage.length);
+    };
+  
+    useEffect(() => {
+      const interval = setInterval(nextImage, 5000);
+  
+      return () => clearInterval(interval);
+    }, []);
+  
+    return (
+      <div className={styles.bodyWrapper}>
+        <div className={styles.imageContainer}>
+          <div className={styles.linkWrapperUser}>
+            <Link href="User/login">
+              <IconUser />
+            </Link>
           </div>
-        ))}
+          <div className={styles.linkWrapperHouses}>
+            <Link href="Movies/houses">
+              <IconHouses />
+            </Link>
+          </div>
+          <Link href="User/register"></Link>
+  
+          <div className={styles.roundedImageWrapper}>
+            <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
+          </div>
+          <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
+          <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
+        </div>
+        <div className={styles['all-movies']}>
+          {moviesData.map((movie, index) => (
+            <div key={movie.id} className={styles.movies}>
+              <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
+              <span className={styles.movieNumber}>{index + 1}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 export async function getStaticProps() {
   const moviesData = await getMoviesData();
