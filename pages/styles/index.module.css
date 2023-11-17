@@ -6,6 +6,19 @@
   margin-top: 20px; 
 }
 
+.movieNumber {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 150px;
+    color: #242a32;
+}
+  
+  
+  
 .movies {
   width: 200px;
   height: 300px;

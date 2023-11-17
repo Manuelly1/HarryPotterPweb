@@ -14,7 +14,7 @@ const testeimagensmainpage = [
   "https://initiate.alphacoders.com/images/132/stretched-1920-1080-1324809.png?1657",
 ];
 
-export default function Main({moviesData}) {
+export default function Main({ moviesData }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -23,7 +23,6 @@ export default function Main({moviesData}) {
     }, 7000);
 
     return () => clearInterval(interval);
-
   }, []);
 
   return (
@@ -39,14 +38,15 @@ export default function Main({moviesData}) {
             <IconHouses />
           </Link>
         </div>
-          <Link href="User/register"></Link>
-        
+        <Link href="User/register"></Link>
+
         <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
       </div>
       <div className={styles['all-movies']}>
-        {moviesData.map((movies, index) => (
-          <div key= {movies.id} className={styles.movies}>
-            <img src={movies.imagem} alt={`Imagem ${movies.id}`} />
+        {moviesData.map((movie, index) => (
+          <div key={movie.id} className={styles.movies}>
+            <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
+            <span className={styles.movieNumber}>{index + 1}</span>
           </div>
         ))}
       </div>
