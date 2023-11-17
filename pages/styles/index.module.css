@@ -1,17 +1,15 @@
 .imageText {
     position: absolute;
-    bottom: 0; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    font-size: 110px; 
-    color: #8B4513; 
-    opacity: 0; 
-    margin-bottom: 800px; 
-    font-weight: bold;
-    font-family: Andale Mono, monospace; 
-  
-
-    animation: fadeInUp 1s forwards;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    color: aliceblue;
+    opacity: 0;
+    margin-bottom: 820px;
+    font: bold italic 110px inherit;
+    text-shadow: 3px 3px 5px rgb(205, 98, 5);
+    animation: fadeInUp 6s forwards;
   }
   
   @keyframes fadeInUp {
