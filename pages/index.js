@@ -45,15 +45,15 @@ export default function Main({ moviesData }) {
             </Link>
           </div>
           <Link href="User/register"></Link>
-  
+          <p className={styles.imageText}>❝EXPECTO PATRONUM!❞</p>
           <div className={styles.roundedImageWrapper}>
             <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
-            <p className={styles.imageText}>"EXPECTO PATRONUM!"</p>
           </div>
           <br></br>
           <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
           <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
         </div>
+        <br></br>
         <div className={styles['all-movies']}>
           {moviesData.map((movie, index) => (
             <div key={movie.id} className={styles.movies}>
