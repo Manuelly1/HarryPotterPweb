@@ -1,3 +1,28 @@
+.imageText {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    color: aliceblue;
+    opacity: 0;
+    margin-bottom: 820px;
+    font: bold italic 110px inherit;
+    text-shadow: 3px 3px 5px rgb(205, 98, 5);
+    animation: fadeInUp 6s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      bottom: -40px;
+      opacity: 0;
+    }
+    to {
+      bottom: 20px; 
+      opacity: 1;
+    }
+  }
+
 .all-movies {
   display: flex;
   justify-content: center;
@@ -6,6 +31,56 @@
   margin-top: 20px; 
 }
 
+.roundedImageWrapper {
+    overflow: hidden;
+    border-radius: 50px; 
+    width: 80%; 
+    margin: 0 auto;
+    margin-top: 70px; 
+}
+  
+.roundedImageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.navigationButton {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 120px;
+    cursor: pointer;
+    z-index: 1;
+    color: #fff; 
+    transition: color 0.3s; 
+  }
+  
+  .prevButton {
+    left: 10px; 
+  }
+  
+  .nextButton {
+    right: 10px; 
+  }
+  
+  .navigationButton:hover {
+    color: #3e2929; 
+  }
+
+.movieNumber {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 150px;
+    color: #5d5f62;
+}
+  
 .movies {
   width: 200px;
   height: 300px;
