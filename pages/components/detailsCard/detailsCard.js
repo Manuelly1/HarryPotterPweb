@@ -1,5 +1,5 @@
 import styles from './detailsCard.module.css';
-import IconTime from '../../components/icons/IconTime';
+import IconTime from '../../components/icons/iconTime';
 import IconCategory from '../../components/icons/iconCategory';
 import IconCalendar from '../../components/icons/iconCalendar';
 
