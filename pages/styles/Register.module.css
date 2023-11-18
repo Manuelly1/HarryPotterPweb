@@ -79,3 +79,31 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #fbfbfb;
 }
+
+.errorMsg {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.inputContainer input {
+    width: 100%;
+    height: 45px;
+    padding: 0 5px 0 40px;
+
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    color: #fffbfb;
+    align-items: center;
+    cursor: pointer;
+}
