@@ -24,6 +24,16 @@ export default function MoviesDetails({  }) {
             </Link>
             <button className={styles.buttonCheck}>Já vi este filme</button>
         </div>
+
+        <style jsx global>{`
+
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+        `}</style>
+
     </div>
   );
 }
