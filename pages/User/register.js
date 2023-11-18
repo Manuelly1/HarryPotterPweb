@@ -48,6 +48,14 @@ export default function Register() {
                     <IconHome />
                 </Link>
             </LoginCard>
+
+            <style jsx global>{`
+                body {
+                    margin: 0px;
+                    padding: 0px;
+                }
+            `}</style>
+
         </div>
     );
 }

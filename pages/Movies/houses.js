@@ -51,6 +51,14 @@ export default function Houses({ housesData }) {
       <Link className={styles.linkHome} href="/">
         <IconHome />
       </Link>
+
+      <style jsx global>{`
+        body {
+          margin: 0px;
+          padding: 0px;
+        }
+      `}</style>
+
     </div>
   );
 }

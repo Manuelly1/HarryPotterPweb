@@ -19,6 +19,14 @@ export default function Login() {
                     <IconHome />
                 </Link>
             </LoginCard>/
+
+            <style jsx global>{`
+                body {
+                    margin: 0px;
+                    padding: 0px;
+                }
+            `}</style>
+            
         </div>
     )
 } 

@@ -50,7 +50,6 @@ const charactersData = [
   
 export default function Characters() {
     return (
-        <body>
         <div className={styles.divPersonagens}>
             <h1 className={styles.titlePersonagens}>Personagens</h1>
             <div className={styles.charactersGrid}>
@@ -73,7 +72,19 @@ export default function Characters() {
             <Link className={styles.linkMovieDetails} href="/Movies/moviesDetails">
                 <IconBack />
             </Link>
+
+            <style jsx global>{`
+                h1 {
+                    margin: 0px;
+                    padding: 0px;
+                }
+                
+                body {
+                    margin: 0px;
+                    padding: 0px;
+                }
+            `}</style>
+
         </div>
-        </body>
     );
 }
