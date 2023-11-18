@@ -1,3 +1,46 @@
+.navbar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px; 
+    padding: 0 20px;
+    z-index: 1;
+}
+  
+.linkHome,
+.linkWrapperUser,
+.linkWrapperHouses {
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.linkHome svg,
+.linkWrapperUser svg,
+.linkWrapperHouses svg {
+    width: 45px; 
+    height: 45px; 
+}
+  
+.linkHome:hover,
+.linkWrapperUser:hover,
+.linkWrapperHouses:hover {
+    transform: scale(1.1); 
+}
+
+.linkWrapperHouses svg {
+    fill: white;
+}
+
+.linkHome svg {
+    fill: white !important; 
+}
+
+
 .imageText {
     position: absolute;
     bottom: 0;
@@ -143,42 +186,3 @@
   background-size: 100% auto;
   min-height: 100vh;
 }
-
-.linkWrapperUser {
-  position: absolute;
-  top: 5px;
-  right: 15px; 
-  display: flex;
-  align-items: center;
-  z-index: 5;
-}
-
-.linkWrapperUser a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 16px;
-}
-
-.linkWrapperUser a:hover {
-  text-decoration: underline;
-}
-
-.linkWrapperHouses {
-  position: absolute;
-  top: 5px;
-  right: 30px; 
-  display: flex;
-  align-items: center;
-  z-index: 5;
-}
-
-.linkWrapperHouses a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 16px;
-}
-
-.linkWrapperHouses a:hover {
-  text-decoration: underline;
-}
-

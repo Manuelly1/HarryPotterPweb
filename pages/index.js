@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from './styles/index.module.css';
 import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
+import IconHome from './components/icons/iconHome';
 import { getMoviesData } from '../api/moviesApi';
 
 const testeimagensmainpage = [
@@ -33,18 +34,25 @@ export default function Main({ moviesData }) {
   
     return (
       <div className={styles.bodyWrapper}>
-        <div className={styles.imageContainer}>
-          <div className={styles.linkWrapperUser}>
-            <Link href="User/login">
-              <IconUser />
-            </Link>
-          </div>
-          <div className={styles.linkWrapperHouses}>
-            <Link href="Movies/houses">
-              <IconHouses />
-            </Link>
-          </div>
-          <Link href="User/register"></Link>
+
+            <div className={styles.navbar}>
+                <div className={styles.linkHome}>
+                    <Link href="/">
+                        <IconHome />
+                    </Link>
+                </div>
+                <div className={styles.linkWrapperUser}>
+                    <Link href="User/login">
+                        <IconUser />
+                    </Link>
+                </div>
+                <div className={styles.linkWrapperHouses}>
+                    <Link href="Movies/houses">
+                        <IconHouses />
+                    </Link>
+                </div>
+            </div>
+            
           <p className={styles.imageText}>❝EXPECTO PATRONUM!❞</p>
           <div className={styles.roundedImageWrapper}>
             <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
@@ -52,7 +60,6 @@ export default function Main({ moviesData }) {
           <br></br>
           <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
           <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
-        </div>
         <br></br>
         <div className={styles['all-movies']}>
           {moviesData.map((movie, index) => (
