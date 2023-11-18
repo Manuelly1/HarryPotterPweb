@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "firebase": "^10.6.0",
-    "next": "^14.0.2"
+    "next": "^14.0.2",
+    "validator": "^13.11.0"
   }
 }
