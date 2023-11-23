@@ -5,13 +5,14 @@
     border-radius: 10px;
     font-size: 18px;
     align-items: center;
-    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
 }
 
 .title {
     text-align: center;
     color: #fffbfb;
     font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sinopse {

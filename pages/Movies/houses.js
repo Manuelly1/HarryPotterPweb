@@ -19,33 +19,33 @@ export default function Houses({ housesData }) {
           className={styles.houseCardGrifinoria}
           title= {housesData[0].nome}
           image= {housesData[0].imagem}
-          colors= {housesData[0].cor}
-          animal= {housesData[0].animal}
-          description= {housesData[0].descricao}
+          colors= {`Cores: ${housesData[0].cor}`}
+          animal= {`Mascote: ${housesData[0].animal}`}
+          description= {`Síntese: ${housesData[0].descricao}`}
         />
         <Corvinal
           className={styles.houseCardCorvinal}
           title= {housesData[1].nome}
           image= {housesData[1].imagem}
-          colors= {housesData[1].cor}
-          animal= {housesData[1].animal}
-          description= {housesData[1].descricao}
+          colors= {`Cores: ${housesData[1].cor}`}
+          animal= {`Mascote: ${housesData[1].animal}`}
+          description= {`Síntese: ${housesData[1].descricao}`}
         />
         <Sonserina
           className={styles.houseCardSonserina}
           title= {housesData[2].nome}
           image= {housesData[2].imagem}
-          colors= {housesData[2].cor}
-          animal= {housesData[2].animal}
-          description= {housesData[2].descricao}
+          colors= {`Cores: ${housesData[2].cor}`}
+          animal= {`Mascote: ${housesData[2].animal}`}
+          description= {`Síntese: ${housesData[2].descricao}`}
         />
         <LufaLufa
           className={styles.houseCardLufaLufa}
           title= {housesData[3].nome}
           image= {housesData[3].imagem}
-          colors= {housesData[3].cor}
-          animal= {housesData[3].animal}
-          description= {housesData[3].descricao}
+          colors= {`Cores: ${housesData[3].cor}`}
+          animal= {`Mascote: ${housesData[3].animal}`}
+          description= {`Síntese: ${housesData[3].descricao}`}
         />
       </div>
       <Link className={styles.linkHome} href="/">
