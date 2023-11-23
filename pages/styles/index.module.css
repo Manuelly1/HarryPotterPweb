@@ -46,7 +46,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 100px;
+    font-size: 50px;
     color: aliceblue;
     opacity: 0;
     margin-bottom: 820px;
@@ -77,7 +77,7 @@
 .roundedImageWrapper {
     overflow: hidden;
     border-radius: 50px; 
-    width: 80%; 
+    width: 87%; 
     margin: 0 auto;
     margin-top: 70px; 
 }
@@ -121,7 +121,7 @@
     padding: 8px;
     border-radius: 4px;
     font-size: 150px;
-    color: #5d5f62;
+    color: rgb(96, 138, 170)  ;
 }
   
 .movies {
