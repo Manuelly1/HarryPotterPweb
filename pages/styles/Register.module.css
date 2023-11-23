@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .houseSelection {
@@ -76,8 +77,9 @@
 }
 
 .titleQuestion {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #fbfbfb;
+    font-size: 20px;
 }
 
 .errorMsg {
@@ -91,7 +93,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
   
 .inputContainer input {
     width: 100%;

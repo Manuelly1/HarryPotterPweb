@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 18px;
+    font-size: 50px;
 }
 
 .cardsContainer {
@@ -16,7 +16,7 @@
 }
 
 .houseCard {
-    margin: 20px; 
+    margin: 40px; 
 }
 
 .linkHome {
@@ -25,4 +25,5 @@
     justify-content: center;
     color: #fbfbfb;
     margin-top: 20px;
+    font-size: 25px;
 }

@@ -3,12 +3,23 @@
     width: 450px;
     padding: 30px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 20px;
+    margin-top: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .title {
     text-align: center;
     color: #fffbfb;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.titleOne {
+    text-align: center;
+    color: #fffbfb;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .imageContainer {
@@ -24,7 +35,7 @@
 }
 
 .description {
-    margin-top: 10px;
+    margin-top: 15px;
     color: #fff; 
 }
 
@@ -33,7 +44,7 @@
 }
 
 .animal {
-    margin-top: 10px;
+    margin-top: 15px;
     color: #fff; 
 }
 
@@ -52,6 +63,6 @@
 
 .houseInfo {
     text-align: center; 
-    margin-top: 10px; 
+    margin-top: 15px; 
 }
   
