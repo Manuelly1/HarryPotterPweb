@@ -8,12 +8,15 @@ import IconEyeCloseLine from '../components/icons/iconEyeClose';
 import IconEyeOpen from '../components/icons/iconEyeOpen'; 
 import validator from 'validator';
 import { useState } from 'react';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../util/firebase';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(true);
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
@@ -27,7 +30,17 @@ export default function Login() {
         e.preventDefault();
 
         if (validEmail) {
-            console.log('Email válido');
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log('Usuário logado com sucesso');
+                setErrorMessage('');
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage('Email ou senha incorretos');
+            });
         } else {
             console.error('Email inválido');
         }
@@ -69,6 +82,8 @@ export default function Login() {
                         </div>
 
                     </div>
+
+                    {errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
                         
                     <Button>Entrar na conta</Button>
                     <Link className={styles.linkReg} href="/User/register">Ainda não possui conta?</Link>
