@@ -4,18 +4,14 @@ import LoginCard from '../components/loginCard/loginCard';
 import Input from '../components/input/input';
 import Button from '../components/button/button';
 import IconHome from '../components/icons/iconHome';
-import IconEyeCloseLine from '../components/icons/iconEyeClose';
-import IconEyeOpen from '../components/icons/iconEyeOpen'; 
 import validator from 'validator';
 import { useState } from 'react';
-import { signInWithEmailAndPassword} from "firebase/auth";
+import { sendPasswordResetEmail} from "firebase/auth";
 import { auth } from '../../util/firebase';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(true);
-    const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleEmailChange = (e) => {
@@ -30,65 +26,40 @@ export default function Login() {
         e.preventDefault();
 
         if (validEmail) {
-            signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log('Usuário logado com sucesso');
-                setErrorMessage('');
+            sendPasswordResetEmail(auth, email)
+            .then(() => {
+                setErrorMessage('E-mail enviado com sucesso');
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                setErrorMessage('Email ou senha incorretos');
+                setErrorMessage('Email incorreto');
             });
         } else {
             console.error('Email inválido');
         }
     };
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-
     return(
         <div className={styles.background}>
-            <LoginCard title="Entre em sua conta"> 
+            <LoginCard title="Digite seu e-mail"> 
                 <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.inputContainer}>
                     <Input 
                         type="login" 
-                        placeholder="Seu login:"
+                        placeholder="Seu e-mail:"
                         value={email}
                         onChange={handleEmailChange}
                     /> 
                 </div>
 
                     {!validEmail && <p className={styles.errorMsg}> Email inválido </p>}
-
-                    <div className={styles.inputContainer}>
-                        <Input 
-                            type={showPassword ? 'text' : 'password'}
-                            placeholder="Sua senha:"
-                            value={password}
-                            onChange={handlePasswordChange}
-                        />
-
-                        <div className={styles.icon} onClick={togglePasswordVisibility}>
-                            {showPassword ? <IconEyeCloseLine /> : <IconEyeOpen />}
-                        </div>
-
-                    </div>
-
-                    {errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
                         
-                    <Button>Entrar na conta</Button>
-                    <Link className={styles.linkReg} href="/User/register">Ainda não possui conta?</Link>
-                    <Link className={styles.linkReg} href="/User/recover">Recuperar conta</Link>
+                    <Button>Mandar email de recuperação de senha</Button>
                 </form>
+
+                {errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
+
                 <Link className={styles.linkHome} href="/">
                     <IconHome />
                 </Link>
@@ -104,5 +75,3 @@ export default function Login() {
         </div>
     )
 } 
-
-// só falta gerar um link para "recuperar senha" e enviar uma notificação no email registrado
