@@ -22,7 +22,7 @@ export default function MoviesDetails({  }) {
                 description= "A batalha entre as forças do bem e do mal da magia alcançam o mundo dos trouxas. O risco nunca foi tão grande, e ninguém está seguro. Harry Potter precisa fazer um sacrifício final conforme o confronto com Lord Voldemort se aproxima."
             />
             <Link href="characters">
-                <button className={styles.buttonPersonagens}>Personagens</button>        
+                <button className={styles.buttonPersonagens}>Ver personagens</button>        
             </Link>
             <div className={styles.icons}>
                 <div className={styles.iconLike}>
