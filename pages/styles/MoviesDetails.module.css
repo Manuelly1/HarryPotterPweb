@@ -38,10 +38,8 @@
     cursor: pointer;
 }
 
-.buttonCheck {
-    background-color: rgb(5, 2, 26);
-    color: #fff;
-    font-size: 14px;
+.iconLike {
+    display: flex;
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
@@ -50,4 +48,30 @@
     bottom: -3px; 
     padding: 10px;
     cursor: pointer;
+}
+
+.iconDislike {
+    display: flex;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 63%;
+    transform: translateX(-50%);
+    bottom: -3px; 
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icons svg {
+    margin-right: 5px;
+}
+
+.iconLike:active {
+    background-color: rgb(5, 2, 26);  
+    color: rgb(5, 2, 26);
+}
+
+.iconDislike:active {
+    background-color: red;  
+    color: red;
 }
