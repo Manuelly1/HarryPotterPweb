@@ -33,8 +33,8 @@
     position: absolute;
     left: 40%;
     transform: translateX(-50%);
-    bottom: -3px; 
-    padding: 10px;
+    bottom: 7px; 
+    padding: 16px;
     cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
     position: absolute;
     left: 60%;
     transform: translateX(-50%);
-    bottom: -3px; 
+    bottom: 3px; 
     padding: 10px;
     cursor: pointer;
 }
@@ -57,7 +57,7 @@
     position: absolute;
     left: 63%;
     transform: translateX(-50%);
-    bottom: -3px; 
+    bottom: 3px; 
     padding: 10px;
     cursor: pointer;
 }
