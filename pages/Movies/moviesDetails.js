@@ -2,6 +2,8 @@ import Link from 'next/link';
 import styles from '../styles/MoviesDetails.module.css';
 import IconBack from '../components/icons/iconBack';
 import DetailsCard from '../components/detailsCard/detailsCard';
+import IconLike from '../components/icons/iconLike';
+import IconDislike from '../components/icons/iconDislike';
 
 export default function MoviesDetails({  }) {
   return (
@@ -22,7 +24,16 @@ export default function MoviesDetails({  }) {
             <Link href="characters">
                 <button className={styles.buttonPersonagens}>Personagens</button>        
             </Link>
-            <button className={styles.buttonCheck}>Já vi este filme</button>
+            <div className={styles.icons}>
+                <div className={styles.iconLike}>
+                    <IconLike/>
+                </div>
+                <div className={styles.iconDislike}>
+                    <IconDislike/>
+                </div>
+            </div>
+
+        
         </div>
 
         <style jsx global>{`
@@ -38,5 +49,4 @@ export default function MoviesDetails({  }) {
   );
 }
 
-// só falta colocar um link para ver o filme (colocar no formato do "já possui uma conta?")
 
