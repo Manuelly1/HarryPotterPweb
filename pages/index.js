@@ -5,7 +5,7 @@ import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
 import IconHome from './components/icons/iconHome';
 import { getMoviesData } from '../api/moviesApi';
-import { DetailsCard } from './components/detailsCard/detailsCard';
+import { MoviesDetails } from './Movies/moviesDetails';
 
 const testeimagensmainpage = [
   "https://img.elo7.com.br/product/original/1C6878E/painel-2x1-harry-potter-magicos.jpg",
@@ -64,7 +64,7 @@ export default function Main({ moviesData }) {
 
           <br></br>
         
-        <Link href="pages/components/detailsCard/detailsCard.js" passHref>
+        <Link href="Movies/moviesDetails" passHref>
             <div className={styles['all-movies']}>
             {moviesData.map((movie, index) => (
                 <div key={movie.id} className={styles.movies}>
