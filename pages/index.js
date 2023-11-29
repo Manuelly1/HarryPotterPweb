@@ -5,6 +5,7 @@ import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
 import IconHome from './components/icons/iconHome';
 import { getMoviesData } from '../api/moviesApi';
+import { MoviesDetails } from './Movies/moviesDetails';
 
 const testeimagensmainpage = [
   "https://img.elo7.com.br/product/original/1C6878E/painel-2x1-harry-potter-magicos.jpg",
@@ -13,6 +14,8 @@ const testeimagensmainpage = [
   "https://i.pinimg.com/originals/a7/ee/0f/a7ee0facd8ef1cef052c3d8faf2a3bf5.jpg",
   "https://i.pinimg.com/originals/5a/ab/18/5aab18d5d3ba0f96c7091cc4cc3aae3d.jpg",
   "https://cutewallpaper.org/28/deathly-hallows-wallpaper-for-android/688024323.jpg",
+  "https://i.pinimg.com/originals/dd/cf/a5/ddcfa58c8d74b38bdcbcb431f94bf58b.jpg",
+  "https://wallpapercave.com/wp/JQGpuF3.jpg",
 ];
 
 export default function Main({ moviesData }) {
@@ -53,22 +56,21 @@ export default function Main({ moviesData }) {
                 </div>
             </div>
             
-          <p className={styles.imageText}>❝EXPECTO PATRONUM!❞</p>
           <div className={styles.roundedImageWrapper}>
             <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
           </div>
           <br></br>
-          <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
-          <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
-        <br></br>
-        <div className={styles['all-movies']}>
-          {moviesData.map((movie, index) => (
-            <div key={movie.id} className={styles.movies}>
-              <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
-              <span className={styles.movieNumber}>{index + 1}</span>
-            </div>
-          ))}
-        </div>
+        
+        <Link href="Movies/moviesDetails" passHref>
+            <div className={styles['all-movies']}>
+            {moviesData.map((movie, index) => (
+                <div key={movie.id} className={styles.movies}>
+                <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
+                <span className={styles.movieNumber}>{index + 1}</span>
+                </div>
+            ))}
+          </div>
+      </Link>
 
         <style jsx global>{`
           body {

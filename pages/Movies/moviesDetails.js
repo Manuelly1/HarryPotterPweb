@@ -18,7 +18,7 @@ export default function MoviesDetails({  }) {
                 year = "2011"
                 time = "130 minutos"
                 type = "Fantasia"
-                sinopse = "Sinopse"
+                sinopse = "Sinopse" 
                 description= "A batalha entre as forças do bem e do mal da magia alcançam o mundo dos trouxas. O risco nunca foi tão grande, e ninguém está seguro. Harry Potter precisa fazer um sacrifício final conforme o confronto com Lord Voldemort se aproxima."
             />
             <Link href="characters">

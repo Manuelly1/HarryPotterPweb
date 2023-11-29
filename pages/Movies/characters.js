@@ -50,41 +50,41 @@ const charactersData = [
   
 export default function Characters() {
     return (
-        <div className={styles.divPersonagens}>
-            <h1 className={styles.titlePersonagens}>Personagens</h1>
-            <div className={styles.charactersGrid}>
-            {
-                charactersData.map((character) => (
-                    <div key={character.id} className={styles.characterCard}>
-                    <img src={character.image} alt={character.name} className={styles.characterImageName}/>
-                    <h2>{character.name}</h2>
-                    </div>
+            <div className={styles.divPersonagens}>
+                <h1 className={styles.titlePersonagens}>Personagens</h1>
+                <div className={styles.charactersGrid}>
+                {
+                    charactersData.map((character) => (
+                        <div key={character.id} className={styles.characterCard}>
+                        <img src={character.image} alt={character.name} className={styles.characterImageName}/>
+                        <h2>{character.name}</h2>
+                        </div>
+                        )
                     )
-                )
-            }
-            </div>
-            <div className={styles.searchIcon}>
-                <IconSearch />
-            </div>
-            <Link className={styles.linkHome} href="/">
-                <IconHome />
-            </Link>
-            <Link className={styles.linkMovieDetails} href="/Movies/moviesDetails">
-                <IconBack />
-            </Link>
-
-            <style jsx global>{`
-                h1 {
-                    margin: 0px;
-                    padding: 0px;
                 }
-                
-                body {
-                    margin: 0px;
-                    padding: 0px;
-                }
-            `}</style>
+                </div>
+                <div className={styles.searchIcon}>
+                    <IconSearch />
+                </div>
+                <Link className={styles.linkHome} href="/">
+                    <IconHome />
+                </Link>
+                <Link className={styles.linkMovieDetails} href="/Movies/moviesDetails">
+                    <IconBack />
+                </Link>
 
-        </div>
+                <style jsx global>{`
+                    h1 {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                    
+                    body {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                `}</style>
+
+            </div>
     );
 }
