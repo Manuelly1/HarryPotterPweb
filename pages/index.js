@@ -14,6 +14,8 @@ const testeimagensmainpage = [
   "https://i.pinimg.com/originals/a7/ee/0f/a7ee0facd8ef1cef052c3d8faf2a3bf5.jpg",
   "https://i.pinimg.com/originals/5a/ab/18/5aab18d5d3ba0f96c7091cc4cc3aae3d.jpg",
   "https://cutewallpaper.org/28/deathly-hallows-wallpaper-for-android/688024323.jpg",
+  "https://i.pinimg.com/originals/dd/cf/a5/ddcfa58c8d74b38bdcbcb431f94bf58b.jpg",
+  "https://wallpapercave.com/wp/JQGpuF3.jpg",
 ];
 
 export default function Main({ moviesData }) {
@@ -57,11 +59,6 @@ export default function Main({ moviesData }) {
           <div className={styles.roundedImageWrapper}>
             <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
           </div>
-          <br></br>
-
-          <button className={`${styles.navigationButton} ${styles.prevButton}`} onClick={prevImage}>&lt;</button>
-          <button className={`${styles.navigationButton} ${styles.nextButton}`} onClick={nextImage}>&gt;</button>
-
           <br></br>
         
         <Link href="Movies/moviesDetails" passHref>
