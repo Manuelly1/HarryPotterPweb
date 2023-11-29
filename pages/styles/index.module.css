@@ -87,7 +87,7 @@
     color: #3e2929; 
   }
 
-.movieNumber {
+  .movieNumber {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -95,8 +95,10 @@
     padding: 8px;
     border-radius: 4px;
     font-size: 150px;
-    color: rgb(96, 138, 170)  ;
+    color: rgb(96, 138, 170);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
+
   
 .movies {
   width: 200px;
