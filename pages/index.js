@@ -69,7 +69,7 @@ export default function Main({ moviesData }) {
                 <span className={styles.movieNumber}>{index + 1}</span>
                 </div>
             ))}
-            </div>
+          </div>
       </Link>
 
         <style jsx global>{`
