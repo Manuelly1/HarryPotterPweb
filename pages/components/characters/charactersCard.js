@@ -9,7 +9,7 @@ const colorsMapping = [
 ];
   
 export default function CharactersCard({ nome, image, ator, descricao, filmes, casa }) {
-    const corFundo = casa ? colorsMapping[casa] : colorsMapping[4]; // 4 é o índice da cor para 'Sem Casa'
+    const corFundo = colorsMapping[casa - 1];
 
     return (
         <div className={styles.card} style={{ backgroundColor: corFundo }}>
