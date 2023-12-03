@@ -17,7 +17,7 @@ export default function CharactersCard({ nome, image, ator, descricao, filmes, c
             <div className={styles.imageContainer}>
                 <img className={styles.image} src={image} alt={nome} />
             </div>
-            <div className={styles.houseInfo}>
+            <div className={styles.charactersInfo}>
                 <p className={styles.description}>{descricao}</p>
                 <p className={styles.actor}>Ator/Atriz: {ator}</p>
                 <p className={styles.movies}>Filmes: {filmes.join(', ')}</p>

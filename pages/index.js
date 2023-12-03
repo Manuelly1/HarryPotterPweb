@@ -5,7 +5,7 @@ import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
 import IconHome from './components/icons/iconHome';
 import { getMoviesData } from '../api/moviesApi';
-import { MoviesDetails } from './Movies/moviesDetails';
+import { useAuth } from '../context/authContext';
 
 const testeimagensmainpage = [
   "https://img.elo7.com.br/product/original/1C6878E/painel-2x1-harry-potter-magicos.jpg",
@@ -20,7 +20,15 @@ const testeimagensmainpage = [
 
 export default function Main({ moviesData }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+    const { isLoggedIn } = useAuth();
+
+    if (isLoggedIn) {
+      console.log('Usuário logado');
+    }
+    else {
+      console.log('Usuário não logado');
+    }
+
     const nextImage = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % testeimagensmainpage.length);
     };
