@@ -20,7 +20,7 @@ const testeimagensmainpage = [
 
 export default function Main({ moviesData }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, userDetails  } = useAuth();
 
     if (isLoggedIn) {
       console.log('Usuário logado');
