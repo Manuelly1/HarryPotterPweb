@@ -10,6 +10,7 @@ import validator from 'validator';
 import { useState } from 'react';
 import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../../util/firebase';
+import { useAuth } from '../../context/authContext';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -17,6 +18,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const { logIn } = useAuth();
 
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
@@ -35,6 +37,9 @@ export default function Login() {
                 const user = userCredential.user;
                 console.log('Usuário logado com sucesso');
                 setErrorMessage('');
+                logIn();
+                <Link className={styles.linkReg} href="/"></Link>
+
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -104,5 +109,3 @@ export default function Login() {
         </div>
     )
 } 
-
-// só falta gerar um link para "recuperar senha" e enviar uma notificação no email registrado
