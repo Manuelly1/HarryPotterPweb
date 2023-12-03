@@ -84,16 +84,3 @@
     cursor: pointer;
 }
 
-.icons svg {
-    margin-right: 5px;
-}
-
-.iconLike:active {
-    background-color: rgb(5, 2, 26);  
-    color: rgb(5, 2, 26);
-}
-
-.iconDislike:active {
-    background-color: red;  
-    color: red;
-}

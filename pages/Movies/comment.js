@@ -3,8 +3,6 @@ import CommentCard from '../components/commentCard/commentCard';
 import styles from '../styles/Comment.module.css';
 import IconBin from '../components/icons/iconBin';
 import IconChange from '../components/icons/iconChange';
-import IconLike from '../components/icons/iconLike';
-import IconDislike from '../components/icons/iconDislike';
 
 export default function Comment() {
     const [userComment, setUserComment] = useState(""); 
@@ -15,7 +13,7 @@ export default function Comment() {
 
     const handleCommentSubmit = (event) => {
         event.preventDefault(); 
-        console.log("Comentário do usuário:", userComment);
+        console.log("Comentário do usuário:", userComment); //coloquei apenas para testar
     };
 
     return (
@@ -33,18 +31,18 @@ export default function Comment() {
                     }
                     className={styles.description}
                 />
-                <div type="submit">
+                <div>
                     <div className={styles.iconChange}>
-                        <IconChange/>
+                        <IconChange />
                     </div>
                     <div className={styles.iconBin}>
-                        <IconBin/>
+                        <IconBin />
                     </div>
                 </div>
-                <button type="submit" className={styles.button}>
+                <button type="submit" className={styles.button} onClick={handleCommentSubmit}>
                     Compartilhar comentário
                 </button>
             </div>
         </div>
     );
-}    
+}
