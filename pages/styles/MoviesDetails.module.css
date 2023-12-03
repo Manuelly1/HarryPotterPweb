@@ -10,12 +10,20 @@
   
 .cardsContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     max-width: 1200px;
     margin-top: 20px;
 }
-  
+
+.commentsContainer {
+    width: 60%; /* Garante que ocupa a largura total do .cardsContainer */
+    margin-top: 20px; /* Adapte conforme necessário */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .linkHome {
     position: absolute;
     top: 30px;
@@ -31,9 +39,23 @@
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
-    left: 40%;
+    left: 60%;
     transform: translateX(-50%);
-    bottom: 7px; 
+    bottom: 25px; 
+    padding: 16px;
+    cursor: pointer;
+}
+
+.buttonComment {
+    background-color: rgb(5, 2, 26);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 49%;
+    transform: translateX(-50%);
+    bottom: 25px; 
     padding: 16px;
     cursor: pointer;
 }
@@ -43,9 +65,9 @@
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
-    left: 60%;
+    left: 37%;
     transform: translateX(-50%);
-    bottom: 3px; 
+    bottom: 25px; 
     padding: 10px;
     cursor: pointer;
 }
@@ -55,9 +77,9 @@
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
-    left: 63%;
+    left: 39.5%;
     transform: translateX(-50%);
-    bottom: 3px; 
+    bottom: 25px; 
     padding: 10px;
     cursor: pointer;
 }

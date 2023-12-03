@@ -4,6 +4,7 @@ import IconBack from '../components/icons/iconBack';
 import DetailsCard from '../components/detailsCard/detailsCard';
 import IconLike from '../components/icons/iconLike';
 import IconDislike from '../components/icons/iconDislike';
+import Comment from './comment';
 
 export default function MoviesDetails({  }) {
   return (
@@ -21,9 +22,6 @@ export default function MoviesDetails({  }) {
                 sinopse = "Sinopse" 
                 description= "A batalha entre as forças do bem e do mal da magia alcançam o mundo dos trouxas. O risco nunca foi tão grande, e ninguém está seguro. Harry Potter precisa fazer um sacrifício final conforme o confronto com Lord Voldemort se aproxima."
             />
-            <Link href="characters">
-                <button className={styles.buttonPersonagens}>Ver personagens</button>        
-            </Link>
             <div className={styles.icons}>
                 <div className={styles.iconLike}>
                     <IconLike/>
@@ -32,8 +30,13 @@ export default function MoviesDetails({  }) {
                     <IconDislike/>
                 </div>
             </div>
+            <Link href="comment">
+                <button className={styles.buttonComment}>Ver comentários</button>        
+            </Link>
+            <Link href="characters">
+                <button className={styles.buttonPersonagens}>Ver personagens</button>        
+            </Link>
 
-        
         </div>
 
         <style jsx global>{`
