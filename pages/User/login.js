@@ -11,6 +11,8 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../../util/firebase';
 import { useAuth } from '../../context/authContext';
+import { useRouter } from 'next/router';
+import { getUserByEmail } from '../../api/userApi';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -19,6 +21,7 @@ export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const { logIn } = useAuth();
+    const router = useRouter();
 
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
@@ -34,11 +37,22 @@ export default function Login() {
         if (validEmail) {
             signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const user = userCredential.user;
-                console.log('Usuário logado com sucesso');
                 setErrorMessage('');
-                logIn();
-                <Link className={styles.linkReg} href="/"></Link>
+
+                getUserByEmail(email)
+                  .then(userData => {
+                    if (userData) {
+                        logIn(email, userData.idCasa);
+
+                    } else {
+                      console.log('Nenhum usuário encontrado com este e-mail.');
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Erro ao buscar os dados do usuário:', error);
+                  });
+
+                router.push('/'); 
 
             })
             .catch((error) => {

@@ -8,6 +8,9 @@ import IconHome from '../components/icons/iconHome';
 import IconEyeCloseLine from '../components/icons/iconEyeClose';
 import IconEyeOpen from '../components/icons/iconEyeOpen'; 
 import validator from 'validator';
+import { auth } from '../../util/firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from 'next/router';
 
 export default function Register() {
     const [selectedHouse, setSelectedHouse] = useState(null);
@@ -15,12 +18,15 @@ export default function Register() {
     const [validEmail, setValidEmail] = useState(true);
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const router = useRouter();
 
     const houses = [
-        {name: 'Gryffindor', url: 'https://i.pinimg.com/564x/7e/8c/2e/7e8c2e995e1d8a41fa7d13034edb24ad.jpg'},
-        {name: 'Hufflepuff', url: 'https://i.pinimg.com/564x/76/45/b9/7645b9b88e14bc3d8c12954bb130fd76.jpg'},
-        {name: 'Ravenclaw', url: 'https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg'},
-        {name: 'Slytherin', url: 'https://i.pinimg.com/564x/e7/6c/57/e76c57c8c4352a05c3c573fe1fba08d8.jpg'},
+        {id: 1 , name: 'Ravenclaw', url: 'https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg'},
+        {id: 2 , name: 'Gryffindor', url: 'https://i.pinimg.com/564x/7e/8c/2e/7e8c2e995e1d8a41fa7d13034edb24ad.jpg'},
+        {id: 3 , name: 'Slytherin', url: 'https://i.pinimg.com/564x/e7/6c/57/e76c57c8c4352a05c3c573fe1fba08d8.jpg'},
+        {id: 4 , name: 'Hufflepuff', url: 'https://i.pinimg.com/564x/76/45/b9/7645b9b88e14bc3d8c12954bb130fd76.jpg'},
+        
     ];
 
     const handleEmailChange = (e) => {
@@ -33,11 +39,31 @@ export default function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log('Email:', validEmail);
 
-        if (validEmail) {
-            console.log('Email válido');
-        } else {
-            console.error('Email inválido');
+        if (validEmail && selectedHouse  && password.length >= 8) {
+            createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                setErrorMessage('');
+                console.log('Usuário criado com sucesso!');
+                router.push('/'); 
+
+            })
+            .catch((error) => {
+                setErrorMessage('Email já está em uso');
+                
+            });
+        } 
+        else if (password.length < 8) {
+            setErrorMessage('Senha deve ter no mínimo 8 caracteres');
+        } 
+
+        else if (!selectedHouse) {
+            setErrorMessage('Selecione uma casa');
+        }
+
+        else {
+            setErrorMessage('Email inválido');
         }
     };
 
@@ -65,11 +91,9 @@ export default function Register() {
                     </div>
 
                     {!validEmail && <p className={styles.errorMsg}> Email inválido </p>}
+                    {errorMessage && <p className={styles.errorMsg}>{errorMessage}</p>}
 
-                    <div className={styles.inputContainer}>
-                        <Input type="login" placeholder="Informe um login:"/> 
-                    </div>
-                    
+
                     <div className={styles.inputContainer}>
                         <Input 
                             type={showPassword ? 'text' : 'password'}
