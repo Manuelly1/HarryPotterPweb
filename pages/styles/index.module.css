@@ -1,14 +1,14 @@
 .navbar {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px; 
-    padding: 0 20px;
-    z-index: 1;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; 
+  padding: 0 20px;
+  z-index: 1;
 }
   
 .linkHome,
@@ -49,11 +49,11 @@
 }
 
 .roundedImageWrapper {
-    overflow: hidden;
-    border-radius: 50px; 
-    width: 87%; 
-    margin: 0 auto;
-    margin-top: 70px; 
+  overflow: hidden;
+  border-radius: 50px; 
+  width: 87%; 
+  margin: 0 auto;
+  margin-top: 70px; 
 }
   
 .roundedImageWrapper img {
@@ -63,40 +63,40 @@
 }
   
 .navigationButton {
-    position: absolute;
-    top: 30%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    font-size: 120px;
-    cursor: pointer;
-    z-index: 1;
-    color: #fff; 
-    transition: color 0.3s; 
-  }
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 120px;
+  cursor: pointer;
+  z-index: 1;
+  color: #fff; 
+  transition: color 0.3s; 
+}
   
-  .prevButton {
-    left: 10px; 
-  }
-  
-  .nextButton {
-    right: 10px; 
-  }
-  
-  .navigationButton:hover {
-    color: #3e2929; 
-  }
+.prevButton {
+  left: 10px; 
+}
 
-  .movieNumber {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: transparent;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 150px;
-    color: rgb(96, 138, 170);
-    text-shadow: 5px 2px 4px rgba(255, 255, 255, 0.8);
+.nextButton {
+  right: 10px; 
+}
+
+.navigationButton:hover {
+  color: #3e2929; 
+}
+
+.movieNumber {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 150px;
+  color: rgb(96, 138, 170);
+  text-shadow: 5px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
   
