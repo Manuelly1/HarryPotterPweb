@@ -1,4 +1,4 @@
-.background {
+ .background {
     background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
     min-height: 100vh;
     display: flex;
@@ -20,19 +20,44 @@
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
+    position: absolute;
+    left: 51.5%;
+    bottom: 420px;
     padding: 16px;
     cursor: pointer;
 }
 
-.commentLabel {
-    display: block;
-    margin-bottom: 10px;
+.iconChange {
+    display: flex;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 37%;
+    transform: translateX(-50%);
+    bottom: 420px; 
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.iconBin {
+    display: flex;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    left: 39.5%;
+    transform: translateX(-50%);
+    bottom: 420px; 
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .commentInput {
-    width: 70%;
+    width: 100%;
     padding: 8px;
     box-sizing: border-box;
     resize: vertical;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+

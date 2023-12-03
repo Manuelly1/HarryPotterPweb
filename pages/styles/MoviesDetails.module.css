@@ -17,8 +17,8 @@
 }
 
 .commentsContainer {
-    width: 60%; /* Garante que ocupa a largura total do .cardsContainer */
-    margin-top: 20px; /* Adapte conforme necessário */
+    width: 60%; 
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
