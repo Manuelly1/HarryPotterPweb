@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../../util/firebase';
 import { useAuth } from '../../context/authContext';
+import { useRouter } from 'next/router';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -19,6 +20,7 @@ export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const { logIn } = useAuth();
+    const router = useRouter();
 
     const handleEmailChange = (e) => {
         const inputEmail = e.target.value;
@@ -38,7 +40,7 @@ export default function Login() {
                 console.log('Usuário logado com sucesso');
                 setErrorMessage('');
                 logIn();
-                <Link className={styles.linkReg} href="/"></Link>
+                router.push('/'); 
 
             })
             .catch((error) => {
