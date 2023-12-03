@@ -1,5 +1,3 @@
-// Houses.js
-
 import Link from 'next/link';
 import HousesCardTitle from '../components/housesCard/housesCardTitle';
 import styles from '../styles/Houses.module.css';

@@ -1,4 +1,4 @@
-.background {
+ .background {
     background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODA4cDdjbHMydmVlMW40dGp1aG42eHFicjk1cHY4aDV5ZWw4ODBuMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
     min-height: 100vh;
     display: flex;
@@ -7,80 +7,57 @@
     font-size: 18px;
     position: relative; 
 }
-  
-.cardsContainer {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin-top: 20px;
+
+.titleComment {
+    text-align: center;
+    color: #fffbfb;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.commentsContainer {
-    width: 60%; 
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.linkHome {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    cursor: pointer;
-    color: #fff;
-}
-
-.buttonPersonagens {
+.button {
     background-color: rgb(5, 2, 26);
     color: #fff;
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
-    left: 60%;
-    transform: translateX(-50%);
-    bottom: 25px; 
+    left: 51.5%;
+    bottom: 420px;
     padding: 16px;
     cursor: pointer;
 }
 
-.buttonComment {
-    background-color: rgb(5, 2, 26);
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    position: absolute;
-    left: 49%;
-    transform: translateX(-50%);
-    bottom: 25px; 
-    padding: 16px;
-    cursor: pointer;
-}
-
-.iconLike {
+.iconChange {
     display: flex;
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
     left: 37%;
     transform: translateX(-50%);
-    bottom: 25px; 
+    bottom: 420px; 
     padding: 10px;
     cursor: pointer;
+    color: #fff;
 }
 
-.iconDislike {
+.iconBin {
     display: flex;
     font-weight: bold;
     border-radius: 5px;
     position: absolute;
     left: 39.5%;
     transform: translateX(-50%);
-    bottom: 25px; 
+    bottom: 420px; 
     padding: 10px;
     cursor: pointer;
+    color: #fff;
+}
+
+.commentInput {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
