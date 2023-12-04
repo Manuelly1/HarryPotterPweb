@@ -21,15 +21,26 @@ const testeimagensmainpage = [
 
 export default function Main({ moviesData }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const { isLoggedIn, userDetails  } = useAuth();
-
-    if (isLoggedIn) {
-      console.log('Usuário logado');
-    }
-    else {
-      console.log('Usuário não logado');
-    }
-
+    const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
+    const { isLoggedIn, userDetails, logout } = useAuth();
+  
+    const handleLogoutClick = () => {
+        if (isLoggedIn) {
+          setShowLogoutConfirmation(true);
+        } else {
+          window.alert('Você precisa estar logado para realizar o logout.');
+        }
+      };
+  
+    const handleLogoutConfirmed = () => {
+      logout();
+      setShowLogoutConfirmation(false);
+    };
+  
+    const handleLogoutCancelled = () => {
+      setShowLogoutConfirmation(false);
+    };
+  
     const nextImage = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % testeimagensmainpage.length);
     };
@@ -40,66 +51,72 @@ export default function Main({ moviesData }) {
   
     useEffect(() => {
       const interval = setInterval(nextImage, 5000);
-  
       return () => clearInterval(interval);
     }, []);
   
     return (
       <div className={styles.bodyWrapper}>
-
-            <div className={styles.navbar}>
-                <div className={styles.linkHome}>
-                    <Link href="/">
-                        <IconHome />
-                    </Link>
-                </div>
-                <div className={styles.linkWrapperHouses}>
-                    <Link href="Movies/houses">
-                        <IconHouses />
-                    </Link>
-                </div>
-                <div className={styles.linkWrapperUser}>
-                    <Link href="User/login">
-                        <IconUser />
-                    </Link>
-                </div>
-                <div className={styles.linkWrapperHouses} onClick="">
-                        <IconExit />
-                </div>
-            </div>
-            
-          <div className={styles.roundedImageWrapper}>
-            <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
+        <div className={styles.navbar}>
+          <div className={styles.linkHome}>
+            <Link href="/">
+              <IconHome />
+            </Link>
           </div>
-          <br></br>
-        
+          <div className={styles.linkWrapperHouses}>
+            <Link href="Movies/houses">
+              <IconHouses />
+            </Link>
+          </div>
+          <div className={styles.linkWrapperUser}>
+            <Link href="User/login">
+              <IconUser />
+            </Link>
+          </div>
+          <div className={styles.linkWrapperHouses} onClick={handleLogoutClick}>
+            <IconExit />
+          </div>
+        </div>
+  
+        <div className={styles.roundedImageWrapper}>
+          <img src={testeimagensmainpage[currentImageIndex]} alt={`Imagem ${currentImageIndex + 1}`} />
+        </div>
+        <br></br>
+  
         <Link href="Movies/moviesDetails" passHref>
-            <div className={styles['all-movies']}>
+          <div className={styles['all-movies']}>
             {moviesData.map((movie, index) => (
-                <div key={movie.id} className={styles.movies}>
+              <div key={movie.id} className={styles.movies}>
                 <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
                 <span className={styles.movieNumber}>{index + 1}</span>
-                </div>
+              </div>
             ))}
           </div>
-      </Link>
-
+        </Link>
+  
+        {/* Modal de confirmação de logout */}
+        {showLogoutConfirmation && (
+          <div className={styles.logoutConfirmationModal}>
+            <p>Deseja realmente sair?</p>
+            <button onClick={handleLogoutConfirmed}>Sim</button>
+            <button onClick={handleLogoutCancelled}>Cancelar</button>
+          </div>
+        )}
+  
         <style jsx global>{`
           body {
             margin: 0px;
             padding: 0px;
           }
         `}</style>
-        
       </div>
     );
   }
-
-export async function getStaticProps() {
-  const moviesData = await getMoviesData();
-  return {
-    props: {
-      moviesData,
-    },
-  };
-}
+  
+  export async function getStaticProps() {
+    const moviesData = await getMoviesData();
+    return {
+      props: {
+        moviesData,
+      },
+    };
+  }
