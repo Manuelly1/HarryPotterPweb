@@ -4,6 +4,7 @@ import styles from './styles/index.module.css';
 import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
 import IconHome from './components/icons/iconHome';
+import IconExit from './components/icons/iconExit';
 import { getMoviesData } from '../api/moviesApi';
 import { useAuth } from '../context/authContext';
 
@@ -52,15 +53,18 @@ export default function Main({ moviesData }) {
                         <IconHome />
                     </Link>
                 </div>
+                <div className={styles.linkWrapperHouses}>
+                    <Link href="Movies/houses">
+                        <IconHouses />
+                    </Link>
+                </div>
                 <div className={styles.linkWrapperUser}>
                     <Link href="User/login">
                         <IconUser />
                     </Link>
                 </div>
-                <div className={styles.linkWrapperHouses}>
-                    <Link href="Movies/houses">
-                        <IconHouses />
-                    </Link>
+                <div className={styles.linkWrapperHouses} onClick="">
+                        <IconExit />
                 </div>
             </div>
             
