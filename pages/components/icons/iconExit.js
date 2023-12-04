@@ -1,20 +1,17 @@
-export default function IconExit({ props }) {
-    return (
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        viewBox="0 0 24 24"
-        height="2em"
-        width="2em"
-        color="#fff"
-        {...props}
-      >
-        <path d="M17 8h4M21 12h-4M17 16h4M10 12L21 12" />
-        <path d="M3 3h4v18H3z" />
-      </svg>
-    );
-  }
-  
+import * as React from "react";
+
+function IconExit(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1em"
+      width="1em"
+      {...props}
+    >
+      <path d="M16 17v-3H9v-4h7V7l5 5-5 5M14 2a2 2 0 012 2v2h-2V4H5v16h9v-2h2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2h9z" />
+    </svg>
+  );
+}
+
+export default IconExit;

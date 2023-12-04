@@ -28,7 +28,7 @@ export default function Main({ moviesData }) {
         if (isLoggedIn) {
           setShowLogoutConfirmation(true);
         } else {
-          window.alert('Você precisa estar logado para realizar o logout.');
+          window.alert('Você precisa estar logado para realizar o logout');
         }
       };
   
