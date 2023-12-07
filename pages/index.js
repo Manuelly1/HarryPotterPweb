@@ -5,6 +5,7 @@ import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
 import IconHome from './components/icons/iconHome';
 import IconExit from './components/icons/iconExit';
+import { open_close_modal } from './components/exitCard/exitCard';
 import { getMoviesData } from '../api/moviesApi';
 import { useAuth } from '../context/authContext';
 
@@ -26,7 +27,7 @@ export default function Main({ moviesData }) {
   
     const handleLogoutClick = () => {
         if (isLoggedIn) {
-          setShowLogoutConfirmation(true);
+            open_close_modal(true);
         } else {
           window.alert('Você precisa estar logado para realizar o logout');
         }
