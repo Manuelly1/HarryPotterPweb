@@ -1,3 +1,5 @@
+import styles from '../../styles/Modal.module.css';
+
 var opened = false
 function open_close_modal() {
     opened = !opened
