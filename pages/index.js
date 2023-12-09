@@ -5,7 +5,6 @@ import IconUser from './components/icons/iconUser';
 import IconHouses from './components/icons/iconHouses';
 import IconHome from './components/icons/iconHome';
 import IconExit from './components/icons/iconExit';
-import { open_close_modal } from './components/exitCard/exitCard';
 import { getMoviesData } from '../api/moviesApi';
 import { useAuth } from '../context/authContext';
 
@@ -23,18 +22,22 @@ const testeimagensmainpage = [
 export default function Main({ moviesData }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
-    const { isLoggedIn, userDetails, logout } = useAuth();
+    const { isLoggedIn, logOut } = useAuth();
+
+    const openClodeModal = () => {
+      setShowLogoutConfirmation(!showLogoutConfirmation);
+    };
   
     const handleLogoutClick = () => {
         if (isLoggedIn) {
-            open_close_modal(true);
+            openClodeModal();
         } else {
           window.alert('Você precisa estar logado para realizar o logout');
         }
       };
   
     const handleLogoutConfirmed = () => {
-      logout();
+      logOut();
       setShowLogoutConfirmation(false);
     };
   
