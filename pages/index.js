@@ -66,16 +66,18 @@ export default function Main({ moviesData }) {
               <IconHome />
             </Link>
           </div>
+
           <div className={styles.linkWrapperHouses}>
             <Link href="Movies/houses">
               <IconHouses />
             </Link>
           </div>
-          <div className={styles.linkWrapperUser}>
+
+          {!isLoggedIn && <div className={styles.linkWrapperUser}>
             <Link href="User/login">
               <IconUser />
             </Link>
-          </div>
+          </div> }
           <div className={styles.linkWrapperHouses} onClick={handleLogoutClick}>
             <IconExit />
           </div>
@@ -97,7 +99,6 @@ export default function Main({ moviesData }) {
           </div>
         </Link>
   
-        {/* Modal de confirmação de logout */}
         {showLogoutConfirmation && (
           <div className={styles.logoutConfirmationModal}>
             <p>Deseja realmente sair?</p>
