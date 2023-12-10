@@ -11,6 +11,7 @@ import validator from 'validator';
 import { auth } from '../../util/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router';
+import { saveUserData } from '../../api/userRegisterApi';
 
 export default function Register() {
     const [selectedHouse, setSelectedHouse] = useState(null);
@@ -39,14 +40,19 @@ export default function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Email:', validEmail);
 
         if (validEmail && selectedHouse  && password.length >= 8) {
             createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
                 setErrorMessage('');
-                console.log('Usuário criado com sucesso!');
-                router.push('/'); 
+                saveUserData(email, selectedHouse)
+                .then((success) => {
+                    if (success) {
+                        router.push('/');
+                    } else {
+                        setErrorMessage('Erro ao criar a conta');
+                    }
+                });
 
             })
             .catch((error) => {
@@ -116,9 +122,9 @@ export default function Register() {
                                     type="radio"
                                     id={`house-${index}`}
                                     name="house"
-                                    value={house.name}
-                                    checked={selectedHouse === house.name}
-                                    onChange={() => setSelectedHouse(house.name)}
+                                    value={house.id}
+                                    checked={selectedHouse === house.id}
+                                    onChange={() => setSelectedHouse(house.id)}
                                 />
                                 <label htmlFor={`house-${index}`}>
                                     <img src={house.url} alt={house.name} />
