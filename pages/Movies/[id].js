@@ -6,12 +6,16 @@ import DetailsCard from '../components/detailsCard/detailsCard';
 import IconLike from '../components/icons/iconLike';
 import IconDislike from '../components/icons/iconDislike';
 import { useAuth } from '../../context/authContext';
+import { useRouter } from 'next/router';
+import { getMovieData } from '../../api/idMovieApi';
 
-export default function MoviesDetails() {
+export default function MoviesDetails({ moviesData }) {
     const [likeActive, setLikeActive] = useState(false);
     const [dislikeActive, setDislikeActive] = useState(false);
     const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
     const { isLoggedIn} = useAuth();
+    const router = useRouter();
+    const { id } = router.query;
 
     const handleLikeClick = () => {
         if (isLoggedIn) {
@@ -39,19 +43,20 @@ export default function MoviesDetails() {
     };
 
     return (
+        console.log(moviesData),
         <div className={styles.background}>
             <Link className={styles.linkHome} href="/">
                 <IconBack />
             </Link>
             <div className={styles.cardsContainer}>
                 <DetailsCard
-                    image="https://w.forfun.com/fetch/cd/cdb10fb1fa03fd60e3f73fcce3fcad6c.jpeg"
-                    title="Harry Potter e as Relíquias da Morte: Parte 2"
-                    year="2011"
-                    time="130 minutos"
-                    type="Fantasia"
+                    image={moviesData.imagem}
+                    title={moviesData.nome}
+                    year={moviesData.ano}
+                    time={moviesData.duracao}
+                    type={moviesData.tipo}
                     sinopse="Sinopse"
-                    description="A batalha entre as forças do bem e do mal da magia alcançam o mundo dos trouxas. O risco nunca foi tão grande, e ninguém está seguro. Harry Potter precisa fazer um sacrifício final conforme o confronto com Lord Voldemort se aproxima."
+                    description={moviesData.sinopse}
                 />
                 <div className={styles.icons}>
                     <div className={styles.iconLike} onClick={handleLikeClick}>
@@ -85,4 +90,33 @@ export default function MoviesDetails() {
             </style>
         </div>
     );
+}
+
+export async function getStaticPaths() {
+  
+    return {
+        paths:[
+
+            {params: {id: '1'}},
+            {params: {id: '2'}},
+            {params: {id: '3'}},
+            {params: {id: '4'}},
+            {params: {id: '5'}},
+            {params: {id: '6'}},
+            {params: {id: '7'}},
+            {params: {id: '8'}},
+
+        ],
+
+        fallback: true 
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const moviesData = await getMovieData(params.id);
+    return {
+      props: {
+        moviesData,
+      },
+    };
 }
