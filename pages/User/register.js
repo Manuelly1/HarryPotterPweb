@@ -12,6 +12,7 @@ import { auth } from '../../util/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router';
 import { saveUserData } from '../../api/userRegisterApi';
+import { useAuth } from '../../context/authContext';
 
 export default function Register() {
     const [selectedHouse, setSelectedHouse] = useState(null);
@@ -21,6 +22,7 @@ export default function Register() {
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const router = useRouter();
+    const { logIn } = useAuth();
 
     const houses = [
         {id: 1 , name: 'Ravenclaw', url: 'https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg'},
@@ -48,6 +50,7 @@ export default function Register() {
                 saveUserData(email, selectedHouse)
                 .then((success) => {
                     if (success) {
+                        logIn(email, selectedHouse);
                         router.push('/');
                     } else {
                         setErrorMessage('Erro ao criar a conta');
