@@ -43,16 +43,15 @@ export default function Login() {
                   .then(userData => {
                     if (userData) {
                         logIn(email, userData.idCasa);
+                        router.push('/'); 
 
                     } else {
-                      console.log('Nenhum usuário encontrado com este e-mail.');
+                      setErrorMessage('Nenhum usuário encontrado com este e-mail.');
                     }
                   })
                   .catch(error => {
-                    console.error('Erro ao buscar os dados do usuário:', error);
+                    setErrorMessage('Erro ao buscar os dados do usuário:', error);
                   });
-
-                router.push('/'); 
 
             })
             .catch((error) => {
