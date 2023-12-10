@@ -41,7 +41,7 @@ export default function Characters({ charactersData }) {
                 )}
                 <IconSearch onClick={handleSearchClick} />
             </div>
-            <div className={styles.charactersGrid}>
+            {filteredCharacters.length > 0 ? <div className={styles.charactersGrid}>
                 {filteredCharacters.map((character) => (
                     <div key={character.id} className={styles.characterCard}>
                         <CharactersCard
@@ -54,7 +54,14 @@ export default function Characters({ charactersData }) {
                         />
                     </div>
                 ))}
+            </div> : 
+            <div className={styles.noResults}>
+                <h3>Nenhum resultado encontrado</h3>
+                <img src="https://i.gifer.com/6kX.gif" alt="Nenhum resultado encontrado" />
+
             </div>
+            
+            }
             <Link className={styles.linkHome} href="/">
                 <IconHome />
             </Link>

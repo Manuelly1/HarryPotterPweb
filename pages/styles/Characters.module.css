@@ -75,3 +75,19 @@
     cursor: pointer; 
     color: #fff;
 }
+
+.noResults {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.noResults img {
+    margin-top: 20px; 
+    width: 300px;
+    margin-block: 60px;
+}

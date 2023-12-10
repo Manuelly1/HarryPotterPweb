@@ -5,19 +5,37 @@ import IconBack from '../components/icons/iconBack';
 import DetailsCard from '../components/detailsCard/detailsCard';
 import IconLike from '../components/icons/iconLike';
 import IconDislike from '../components/icons/iconDislike';
+import { useAuth } from '../../context/authContext';
 
 export default function MoviesDetails() {
     const [likeActive, setLikeActive] = useState(false);
     const [dislikeActive, setDislikeActive] = useState(false);
+    const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
+    const { isLoggedIn} = useAuth();
 
     const handleLikeClick = () => {
-        setLikeActive(!likeActive);
-        setDislikeActive(false); 
+        if (isLoggedIn) {
+            setLikeActive(!likeActive);
+            setDislikeActive(false);
+        }
+        else {
+            setShowNotLoggedIn(true);
+
+        }
     };
 
     const handleDislikeClick = () => {
-        setDislikeActive(!dislikeActive);
-        setLikeActive(false); 
+        if (isLoggedIn) {
+            setDislikeActive(!dislikeActive);
+            setLikeActive(false); 
+        }
+        else{
+            setShowNotLoggedIn(true);
+        }
+    };
+
+    const handleLNotLoggedIn = () => {
+        setShowNotLoggedIn(false);
     };
 
     return (
@@ -50,6 +68,13 @@ export default function MoviesDetails() {
                     <button className={styles.buttonPersonagens}>Personagens</button>
                 </Link>
             </div>
+
+            {showNotLoggedIn && (
+                <div className={styles.notLoggedIn}>
+                    <p>Precisa logar para reagir</p>
+                    <button onClick={handleLNotLoggedIn}>Ok</button>
+                </div>
+            )}
 
             <style jsx global>{`
                 body {
