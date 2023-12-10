@@ -11,6 +11,8 @@ import validator from 'validator';
 import { auth } from '../../util/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'next/router';
+import { saveUserData } from '../../api/userRegisterApi';
+import { useAuth } from '../../context/authContext';
 
 export default function Register() {
     const [selectedHouse, setSelectedHouse] = useState(null);
@@ -20,6 +22,7 @@ export default function Register() {
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const router = useRouter();
+    const { logIn } = useAuth();
 
     const houses = [
         {id: 1 , name: 'Ravenclaw', url: 'https://i.pinimg.com/564x/6d/ed/03/6ded03a78ba6b8d870c899586117245a.jpg'},
@@ -39,14 +42,20 @@ export default function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Email:', validEmail);
 
         if (validEmail && selectedHouse  && password.length >= 8) {
             createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
                 setErrorMessage('');
-                console.log('Usuário criado com sucesso!');
-                router.push('/'); 
+                saveUserData(email, selectedHouse)
+                .then((success) => {
+                    if (success) {
+                        logIn(email, selectedHouse);
+                        router.push('/');
+                    } else {
+                        setErrorMessage('Erro ao criar a conta');
+                    }
+                });
 
             })
             .catch((error) => {
@@ -116,9 +125,9 @@ export default function Register() {
                                     type="radio"
                                     id={`house-${index}`}
                                     name="house"
-                                    value={house.name}
-                                    checked={selectedHouse === house.name}
-                                    onChange={() => setSelectedHouse(house.name)}
+                                    value={house.id}
+                                    checked={selectedHouse === house.id}
+                                    onChange={() => setSelectedHouse(house.id)}
                                 />
                                 <label htmlFor={`house-${index}`}>
                                     <img src={house.url} alt={house.name} />
