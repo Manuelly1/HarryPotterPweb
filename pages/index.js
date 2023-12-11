@@ -88,16 +88,19 @@ export default function Main({ moviesData }) {
         </div>
         <br></br>
   
-        <Link href="Movies/moviesDetails" passHref>
           <div className={styles['all-movies']}>
             {moviesData.map((movie, index) => (
-              <div key={movie.id} className={styles.movies}>
-                <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
-                <span className={styles.movieNumber}>{index + 1}</span>
-              </div>
+              
+              <Link key={movie.id} href="/Movies/[id]" as={`/Movies/${movie.id}`} passHref >
+
+                <div key={movie.id} className={styles.movies}>
+                  <img src={movie.imagem} alt={`Imagem ${movie.id}`} />
+                  <span className={styles.movieNumber}>{index + 1}</span>
+                </div>
+
+              </Link>
             ))}
           </div>
-        </Link>
   
         {showLogoutConfirmation && (
           <div className={styles.logoutConfirmationModal}>
