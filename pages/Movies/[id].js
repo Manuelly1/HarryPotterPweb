@@ -13,7 +13,7 @@ export default function MoviesDetails({ moviesData }) {
     const [likeActive, setLikeActive] = useState(false);
     const [dislikeActive, setDislikeActive] = useState(false);
     const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
-    const { isLoggedIn} = useAuth();
+    const { isLoggedIn } = useAuth();
     const router = useRouter();
     const { id } = router.query;
 
@@ -21,19 +21,16 @@ export default function MoviesDetails({ moviesData }) {
         if (isLoggedIn) {
             setLikeActive(!likeActive);
             setDislikeActive(false);
-        }
-        else {
+        } else {
             setShowNotLoggedIn(true);
-
         }
     };
 
     const handleDislikeClick = () => {
         if (isLoggedIn) {
             setDislikeActive(!dislikeActive);
-            setLikeActive(false); 
-        }
-        else{
+            setLikeActive(false);
+        } else {
             setShowNotLoggedIn(true);
         }
     };
@@ -43,21 +40,22 @@ export default function MoviesDetails({ moviesData }) {
     };
 
     return (
-        console.log(moviesData),
         <div className={styles.background}>
             <Link className={styles.linkHome} href="/">
                 <IconBack />
             </Link>
             <div className={styles.cardsContainer}>
-                <DetailsCard
-                    image={moviesData.imagem}
-                    title={moviesData.nome}
-                    year={moviesData.ano}
-                    time={moviesData.duracao}
-                    type={moviesData.tipo}
-                    sinopse="Sinopse"
-                    description={moviesData.sinopse}
-                />
+                {moviesData && (
+                    <DetailsCard
+                        image={moviesData.imagem}
+                        title={moviesData.nome}
+                        year={moviesData.ano}
+                        time={moviesData.duracao}
+                        type={moviesData.tipo}
+                        sinopse="Sinopse"
+                        description={moviesData.sinopse}
+                    />
+                )}
                 <div className={styles.icons}>
                     <div className={styles.iconLike} onClick={handleLikeClick}>
                         <IconLike key={likeActive ? 'active' : 'inactive'} fill={likeActive ? 'blue' : '#fff'} />
@@ -93,30 +91,40 @@ export default function MoviesDetails({ moviesData }) {
 }
 
 export async function getStaticPaths() {
-  
     return {
-        paths:[
-
-            {params: {id: '1'}},
-            {params: {id: '2'}},
-            {params: {id: '3'}},
-            {params: {id: '4'}},
-            {params: {id: '5'}},
-            {params: {id: '6'}},
-            {params: {id: '7'}},
-            {params: {id: '8'}},
-
+        paths: [
+            { params: { id: '1' } },
+            { params: { id: '2' } },
+            { params: { id: '3' } },
+            { params: { id: '4' } },
+            { params: { id: '5' } },
+            { params: { id: '6' } },
+            { params: { id: '7' } },
+            { params: { id: '8' } },
         ],
-
-        fallback: true 
+        fallback: true,
     };
 }
 
 export async function getStaticProps({ params }) {
-    const moviesData = await getMovieData(params.id);
-    return {
-      props: {
-        moviesData,
-      },
-    };
+    try {
+        const moviesData = await getMovieData(params.id);
+
+        if (!moviesData) {
+            return {
+                notFound: true,
+            };
+        }
+
+        return {
+            props: {
+                moviesData,
+            },
+        };
+    } catch (error) {
+        console.error("Erro ao buscar dados do filme:", error);
+        return {
+            notFound: true,
+        };
+    }
 }
