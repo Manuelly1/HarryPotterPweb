@@ -5,15 +5,19 @@ import IconBin from '../components/icons/iconBin';
 import IconChange from '../components/icons/iconChange';
 
 export default function Comment() {
-    const [userComment, setUserComment] = useState(""); 
+    const [userComment, setUserComment] = useState("");
+    const [comments, setComments] = useState([]);
 
     const handleCommentChange = (event) => {
         setUserComment(event.target.value);
     };
 
     const handleCommentSubmit = (event) => {
-        event.preventDefault(); 
-        console.log("Comentário do usuário:", userComment); //coloquei apenas para testar
+        event.preventDefault();
+        console.log("Comentário do usuário:", userComment);
+
+        setComments([...comments, userComment]);
+        setUserComment("");
     };
 
     return (
@@ -31,18 +35,35 @@ export default function Comment() {
                     }
                     className={styles.description}
                 />
-                <div>
-                    <div className={styles.iconChange}>
-                        <IconChange />
-                    </div>
-                    <div className={styles.iconBin}>
-                        <IconBin />
-                    </div>
+
+                <div className={styles.commentListContainer} style={{ maxHeight: '500px', overflowY: 'auto' }}>
+                    {comments.map((comment, index) => (
+                        <CommentCard key={index} description={comment} className={styles.commentList} />
+                    ))}
                 </div>
-                <button type="submit" className={styles.button} onClick={handleCommentSubmit}>
-                    Compartilhar comentário
-                </button>
             </div>
+
+            <div className={styles.iconButtons}>
+                <div className={styles.iconChange}>
+                    <IconChange />
+                </div>
+                <div className={styles.iconBin}>
+                    <IconBin />
+                </div>
+            </div>
+
+            <button type="submit" className={styles.button} onClick={handleCommentSubmit}>
+                Compartilhar comentário
+            </button>
+
+            <style jsx global>
+                {`
+                    body {
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                `}
+            </style>
         </div>
     );
 }

@@ -26,6 +26,9 @@ export default function DetailsCard({ title, year, image, time, type, descriptio
             <h3 className={styles.sinopse}>{sinopse}</h3>
             <p className={styles.description}>{description}</p>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
         </div>
     );
 }
