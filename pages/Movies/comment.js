@@ -16,8 +16,18 @@ export default function Comment() {
         event.preventDefault();
         console.log("Comentário do usuário:", userComment);
 
-        setComments([...comments, userComment]);
+        setComments([...comments, { text: userComment, id: Date.now() }]);
         setUserComment("");
+    };
+
+    const handleCommentEdit = (id) => {
+        // Implement edit functionality as needed
+        console.log(`Edit comment with id ${id}`);
+    };
+
+    const handleCommentDelete = (id) => {
+        // Implement delete functionality as needed
+        setComments(comments.filter(comment => comment.id !== id));
     };
 
     return (
@@ -37,18 +47,19 @@ export default function Comment() {
                 />
 
                 <div className={styles.commentListContainer} style={{ maxHeight: '500px', overflowY: 'auto' }}>
-                    {comments.map((comment, index) => (
-                        <CommentCard key={index} description={comment} className={styles.commentList} />
+                    {comments.map((comment) => (
+                        <div key={comment.id} className={styles.commentList}>
+                            <CommentCard description={comment.text} />
+                            <div className={styles.iconButtons}>
+                                <div className={styles.iconChange} onClick={() => handleCommentEdit(comment.id)}>
+                                    <IconChange />
+                                </div>
+                                <div className={styles.iconBin} onClick={() => handleCommentDelete(comment.id)}>
+                                    <IconBin />
+                                </div>
+                            </div>
+                        </div>
                     ))}
-                </div>
-            </div>
-
-            <div className={styles.iconButtons}>
-                <div className={styles.iconChange}>
-                    <IconChange />
-                </div>
-                <div className={styles.iconBin}>
-                    <IconBin />
                 </div>
             </div>
 
