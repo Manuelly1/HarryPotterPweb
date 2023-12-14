@@ -8,6 +8,7 @@ import IconDislike from '../components/icons/iconDislike';
 import { useAuth } from '../../context/authContext';
 import { getMovieData } from '../../api/idMovieApi';
 import { getAssMovieData } from '../../api/assMovieApi';
+import { postAssMovieData } from '../../api/assPostMovieApi';
 import { useEffect } from 'react';
 
 export default function MoviesDetails({ moviesData }) {
@@ -40,6 +41,9 @@ export default function MoviesDetails({ moviesData }) {
         if (isLoggedIn) {
             setLikeActive(!likeActive);
             setDislikeActive(false);
+
+            postAssMovieData(userDetails.email, moviesData.id, !likeActive, false);
+
         } else {
             setShowNotLoggedIn(true);
         }
@@ -49,6 +53,9 @@ export default function MoviesDetails({ moviesData }) {
         if (isLoggedIn) {
             setDislikeActive(!dislikeActive);
             setLikeActive(false);
+
+            postAssMovieData(userDetails.email, moviesData.id, false, !dislikeActive);
+            
         } else {
             setShowNotLoggedIn(true);
         }
