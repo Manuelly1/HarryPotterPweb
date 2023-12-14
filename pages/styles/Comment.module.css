@@ -27,30 +27,25 @@
     cursor: pointer;
 }
 
-.iconChange {
-    display: flex;
-    font-weight: bold;
-    border-radius: 5px;
-    position: absolute;
-    left: 37%;
-    transform: translateX(-50%);
-    bottom: 420px; 
-    padding: 10px;
-    cursor: pointer;
-    color: #fff;
+.commentList {
+    position: relative;
 }
 
-.iconBin {
+.iconButtons {
     display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.iconChange,
+.iconBin {
     font-weight: bold;
     border-radius: 5px;
-    position: absolute;
-    left: 39.5%;
-    transform: translateX(-50%);
-    bottom: 420px; 
     padding: 10px;
     cursor: pointer;
     color: #fff;
+    margin-left: 5px; /* Adicione margem entre os ícones */
 }
 
 .commentInput {
