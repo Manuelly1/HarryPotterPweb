@@ -6,21 +6,44 @@ import DetailsCard from '../components/detailsCard/detailsCard';
 import IconLike from '../components/icons/iconLike';
 import IconDislike from '../components/icons/iconDislike';
 import { useAuth } from '../../context/authContext';
-import { useRouter } from 'next/router';
 import { getMovieData } from '../../api/idMovieApi';
+import { getAssMovieData } from '../../api/assMovieApi';
+import { postAssMovieData } from '../../api/assPostMovieApi';
+import { useEffect } from 'react';
 
 export default function MoviesDetails({ moviesData }) {
     const [likeActive, setLikeActive] = useState(false);
     const [dislikeActive, setDislikeActive] = useState(false);
     const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
-    const { isLoggedIn } = useAuth();
-    const router = useRouter();
-    const { id } = router.query;
+    const { isLoggedIn, whatMovie, userDetails } = useAuth();
+
+    whatMovie(moviesData.id);
+
+    useEffect(() => {
+        async function fetchData() {
+            if (isLoggedIn) {
+                const movieLikes = await getAssMovieData(userDetails.email, moviesData.id);
+                if (movieLikes.length === 0) {
+                    setLikeActive(false);
+                    setDislikeActive(false);
+                } else {
+                    const movie = movieLikes[0];
+                    setLikeActive(movie.like);
+                    setDislikeActive(movie.deslike);
+                }
+            }
+        }
+
+        fetchData();
+    }, [isLoggedIn, userDetails.email, moviesData.id]);
 
     const handleLikeClick = () => {
         if (isLoggedIn) {
             setLikeActive(!likeActive);
             setDislikeActive(false);
+
+            postAssMovieData(userDetails.email, moviesData.id, !likeActive, false);
+
         } else {
             setShowNotLoggedIn(true);
         }
@@ -30,6 +53,9 @@ export default function MoviesDetails({ moviesData }) {
         if (isLoggedIn) {
             setDislikeActive(!dislikeActive);
             setLikeActive(false);
+
+            postAssMovieData(userDetails.email, moviesData.id, false, !dislikeActive);
+            
         } else {
             setShowNotLoggedIn(true);
         }
