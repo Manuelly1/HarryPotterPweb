@@ -12,8 +12,6 @@ export async function getAssMovieData(email, id) {
   const moviesData = moviesSnapshot.docs.map(doc => doc.data());
 
   if (moviesData.length != 0) {
-    console.log(moviesData);
-
     const moviesDataFiltered = moviesData.filter(movie => movie.idFilme === id);
     return moviesDataFiltered;
   }
