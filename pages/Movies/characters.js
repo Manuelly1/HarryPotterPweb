@@ -6,10 +6,12 @@ import IconSearch from '../components/icons/iconSearch';
 import IconBack from '../components/icons/iconBack';
 import CharactersCard from '../components/characters/charactersCard';
 import { getCharactersData } from '../../api/charactersApi';
+import { useAuth } from '../../context/authContext';
 
 export default function Characters({ charactersData }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [isSearchActive, setIsSearchActive] = useState(false);
+    const { lastMovie } = useAuth();
 
     const filteredCharacters = charactersData.filter((character) =>
         character.nome.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -65,7 +67,7 @@ export default function Characters({ charactersData }) {
             <Link className={styles.linkHome} href="/">
                 <IconHome />
             </Link>
-            <Link className={styles.linkMovieDetails} href="/Movies/moviesDetails">
+            <Link className={styles.linkMovieDetails} href={`/Movies/${lastMovie}`}>
                 <IconBack />
             </Link>
 

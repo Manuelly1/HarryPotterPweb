@@ -6,16 +6,15 @@ import DetailsCard from '../components/detailsCard/detailsCard';
 import IconLike from '../components/icons/iconLike';
 import IconDislike from '../components/icons/iconDislike';
 import { useAuth } from '../../context/authContext';
-import { useRouter } from 'next/router';
 import { getMovieData } from '../../api/idMovieApi';
 
 export default function MoviesDetails({ moviesData }) {
     const [likeActive, setLikeActive] = useState(false);
     const [dislikeActive, setDislikeActive] = useState(false);
     const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
-    const { isLoggedIn } = useAuth();
-    const router = useRouter();
-    const { id } = router.query;
+    const { isLoggedIn, whatMovie } = useAuth();
+
+    whatMovie(moviesData.id);
 
     const handleLikeClick = () => {
         if (isLoggedIn) {
