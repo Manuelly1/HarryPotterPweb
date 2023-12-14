@@ -7,14 +7,34 @@ import IconLike from '../components/icons/iconLike';
 import IconDislike from '../components/icons/iconDislike';
 import { useAuth } from '../../context/authContext';
 import { getMovieData } from '../../api/idMovieApi';
+import { getAssMovieData } from '../../api/assMovieApi';
+import { useEffect } from 'react';
 
 export default function MoviesDetails({ moviesData }) {
     const [likeActive, setLikeActive] = useState(false);
     const [dislikeActive, setDislikeActive] = useState(false);
     const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
-    const { isLoggedIn, whatMovie } = useAuth();
+    const { isLoggedIn, whatMovie, userDetails } = useAuth();
 
     whatMovie(moviesData.id);
+
+    useEffect(() => {
+        async function fetchData() {
+            if (isLoggedIn) {
+                const movieLikes = await getAssMovieData(userDetails.email, moviesData.id);
+                if (movieLikes.length === 0) {
+                    setLikeActive(false);
+                    setDislikeActive(false);
+                } else {
+                    const movie = movieLikes[0];
+                    setLikeActive(movie.like);
+                    setDislikeActive(movie.deslike);
+                }
+            }
+        }
+
+        fetchData();
+    }, [isLoggedIn, userDetails.email, moviesData.id]);
 
     const handleLikeClick = () => {
         if (isLoggedIn) {
