@@ -21,12 +21,10 @@ export default function Comment() {
     };
 
     const handleCommentEdit = (id) => {
-        // Implement edit functionality as needed
         console.log(`Edit comment with id ${id}`);
     };
 
     const handleCommentDelete = (id) => {
-        // Implement delete functionality as needed
         setComments(comments.filter(comment => comment.id !== id));
     };
 
