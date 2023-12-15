@@ -2,11 +2,11 @@ import { useState } from 'react';
 import CommentCard from '../components/commentCard/commentCard';
 import styles from '../styles/Comment.module.css';
 import IconBin from '../components/icons/iconBin';
-import IconChange from '../components/icons/iconChange';
 import { useAuth } from '../../context/authContext';
 import { postComment } from '../../api/commentPostApi';
 import { useEffect } from 'react';
 import { getMovieComments } from '../../api/commentGetApi';
+import { deleteComment } from '../../api/deleteCommentApi';
 
 export default function Comment() {
     const [userComment, setUserComment] = useState("");
@@ -31,13 +31,8 @@ export default function Comment() {
         }
     };
 
-    const handleCommentEdit = (id) => {
-        // Implement edit functionality as needed
-        console.log(`Edit comment with id ${id}`);
-    };
-
     const handleCommentDelete = (id) => {
-        // Implement delete functionality as needed
+        deleteComment(id);
         setComments(comments.filter(comment => comment.id !== id));
     };
 
