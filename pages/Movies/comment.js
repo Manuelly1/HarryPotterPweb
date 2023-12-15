@@ -5,6 +5,8 @@ import IconBin from '../components/icons/iconBin';
 import IconChange from '../components/icons/iconChange';
 import { useAuth } from '../../context/authContext';
 import { postComment } from '../../api/commentPostApi';
+import { useEffect } from 'react';
+import { getMovieComments } from '../../api/commentGetApi';
 
 export default function Comment() {
     const [userComment, setUserComment] = useState("");
@@ -21,7 +23,7 @@ export default function Comment() {
             event.preventDefault();
             postComment(userDetails.email, lastMovie, userComment);
 
-            setComments([...comments, { text: userComment, id: Date.now() }]);
+            setComments([...comments, { idUsuario: userDetails.email, descricao: userComment, id: Date.now() }]);
             setUserComment("");
         }
         else {
@@ -43,6 +45,15 @@ export default function Comment() {
         setShowNotLoggedIn(false);
     };
 
+    useEffect(() => {
+        async function fetchComments() {
+            const commentsData = await getMovieComments(lastMovie);
+            setComments(commentsData);
+        }
+
+        fetchComments();
+    }, [lastMovie]);
+
     return (
         <div className={styles.background}>
             <div className={styles.cardsContainer}>
@@ -62,7 +73,9 @@ export default function Comment() {
                 <div className={styles.commentListContainer} style={{ maxHeight: '500px', overflowY: 'auto' }}>
                     {comments.map((comment) => (
                         <div key={comment.id} className={styles.commentList}>
-                            <CommentCard description={comment.text} />
+                            <CommentCard 
+                                title={comment.idUsuario}
+                                description={comment.descricao} />
                             <div className={styles.iconButtons}>
                                 <div className={styles.iconChange} onClick={() => handleCommentEdit(comment.id)}>
                                     <IconChange />
