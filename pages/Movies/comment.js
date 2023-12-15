@@ -77,12 +77,13 @@ export default function Comment() {
                                 title={comment.idUsuario}
                                 description={comment.descricao} />
                             <div className={styles.iconButtons}>
-                                <div className={styles.iconChange} onClick={() => handleCommentEdit(comment.id)}>
-                                    <IconChange />
-                                </div>
-                                <div className={styles.iconBin} onClick={() => handleCommentDelete(comment.id)}>
-                                    <IconBin />
-                                </div>
+
+                                {isLoggedIn && comment.idUsuario === userDetails.email && (
+                                    <div className={styles.iconBin} onClick={() => handleCommentDelete(comment.id)}>
+                                        <IconBin />
+                                    </div>
+                                )}
+
                             </div>
                         </div>
                     ))}
