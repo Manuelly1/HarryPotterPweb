@@ -29,6 +29,7 @@ export default function DetailsCard({ title, year, image, time, type, descriptio
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
         </div>
     );
 }
