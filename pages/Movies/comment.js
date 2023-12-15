@@ -4,12 +4,13 @@ import styles from '../styles/Comment.module.css';
 import IconBin from '../components/icons/iconBin';
 import IconChange from '../components/icons/iconChange';
 import { useAuth } from '../../context/authContext';
+import { postComment } from '../../api/commentPostApi';
 
 export default function Comment() {
     const [userComment, setUserComment] = useState("");
     const [comments, setComments] = useState([]);
     const [showNotLoggedIn, setShowNotLoggedIn] = useState(false);
-    const { isLoggedIn} = useAuth();
+    const { isLoggedIn, lastMovie, userDetails} = useAuth();
 
     const handleCommentChange = (event) => {
         setUserComment(event.target.value);
@@ -18,7 +19,7 @@ export default function Comment() {
     const handleCommentSubmit = (event) => {
         if (isLoggedIn) {
             event.preventDefault();
-            console.log("Comentário do usuário:", userComment);
+            postComment(userDetails.email, lastMovie, userComment);
 
             setComments([...comments, { text: userComment, id: Date.now() }]);
             setUserComment("");
